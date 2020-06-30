@@ -1,0 +1,311 @@
+body {
+  border: 0px;
+  width: 100vw;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Oxygen-Light', sans-serif;
+  overflow-x: hidden;
+}
+
+.nav {
+  display: -ms-grid;
+  display: grid;
+  background-color: #1A2050;
+  -ms-grid-rows: 1fr 4fr 1fr;
+      grid-template-rows: 1fr 4fr 1fr;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-areas: ". . . . . ." "logo what look map vol info" ". . . . . .";
+  height: 7vw;
+  width: 100vw;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navtext {
+  text-align: center;
+  font-size: 1.5vw;
+  color: white;
+}
+
+.logoh {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: logo;
+}
+
+.logo {
+  height: 5vw;
+  width: 12.6vw;
+  margin-left: 1vw;
+}
+
+.what {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: what;
+}
+
+.look {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: look;
+}
+
+.map {
+  -ms-grid-row: 3;
+  -ms-grid-column: 7;
+  -ms-grid-column-span: 5;
+  grid-area: map;
+}
+
+.vol {
+  -ms-grid-row: 2;
+  -ms-grid-column: 5;
+  grid-area: vol;
+}
+
+.info {
+  -ms-grid-row: 2;
+  -ms-grid-column: 6;
+  grid-area: info;
+  text-align: center;
+}
+
+#coverimg {
+  height: 38.7vw;
+  overflow-y: hidden;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 7fr 3fr;
+      grid-template-columns: 3fr 7fr 3fr;
+  -ms-grid-rows: 1fr 5fr 2fr;
+      grid-template-rows: 1fr 5fr 2fr;
+      grid-template-areas: "top top top" ". . ." "left . right";
+  color: white;
+}
+
+#boxtop {
+  background-color: rgba(36, 36, 36, 0.7);
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: top;
+  text-align: center;
+  font-size: 1.7vw;
+}
+
+#boxleft {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: left;
+  background-color: rgba(36, 36, 36, 0.7);
+}
+
+#boxright {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: right;
+  background-color: rgba(36, 36, 36, 0.7);
+}
+
+#cover {
+  margin-top: -23.7vw;
+  width: 100vw;
+  position: fixed;
+  z-index: -50;
+}
+
+.line {
+  height: 1vw;
+  width: 90vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  border-radius: 1vw;
+  background-color: #4FAF36;
+}
+
+.remainder {
+  padding-top: 2vw;
+  background-color: white;
+}
+
+#linkbox {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 3fr 2fr 3fr 2fr 3fr;
+      grid-template-rows: 3fr 2fr 3fr 2fr 3fr;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-areas: "family family family . volunteer volunteer volunteer . whats whats whats" ". . . . . . . . . . ." "lookout lookout lookout lookout lookout . map map map map map" ". . . . . . . . . . ." "information information information information information information information information information information information";
+  width: 90vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-top: 5vw;
+  padding-bottom: 5vw;
+}
+
+#volunteer {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 3;
+  grid-area: volunteer;
+  border-radius: 0.4vw;
+  background-size: 25.3vw 14.8vw;
+  background-image: url("/pic/volunteer1.jpg");
+  display: -ms-grid;
+  display: grid;
+  height: 14.3vw;
+  -ms-grid-rows: 5fr 1fr;
+      grid-template-rows: 5fr 1fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas: "." "voltex";
+}
+
+#voltex {
+  background-color: rgba(4, 136, 208, 0.8);
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: voltex;
+  margin: 0vw;
+  border-radius: 0px 0px 0.4vw 0.4vw;
+}
+
+#family {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: family;
+  border-radius: 0.4vw;
+  background-size: 25.3vw 14.8vw;
+  background-image: url("/pic/lepe-familyfun-480x320.jpg");
+  display: -ms-grid;
+  display: grid;
+  height: 14.3vw;
+  -ms-grid-rows: 5fr 1fr;
+      grid-template-rows: 5fr 1fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas: "." "famtex";
+}
+
+#famtex {
+  background-color: rgba(4, 136, 208, 0.8);
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: famtex;
+  margin: 0vw;
+  border-radius: 0px 0px 0.4vw 0.4vw;
+}
+
+#whats {
+  -ms-grid-row: 1;
+  -ms-grid-column: 9;
+  -ms-grid-column-span: 3;
+  grid-area: whats;
+  border-radius: 0.4vw;
+  background-size: 25.3vw 14.8vw;
+  background-image: url("/pic/couple-and-child.png");
+  display: -ms-grid;
+  display: grid;
+  height: 14.3vw;
+  -ms-grid-rows: 5fr 1fr;
+      grid-template-rows: 5fr 1fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas: "." "whatex";
+}
+
+#whatex {
+  background-color: rgba(4, 136, 208, 0.8);
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: whatex;
+  margin: 0vw;
+  border-radius: 0px 0px 0.4vw 0.4vw;
+}
+
+#lookout {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-area: lookout;
+  border-radius: 0.4vw;
+  background-size: 42.3vw 14.8vw;
+  background-image: url("/pic/view-from-lookout.png");
+  display: -ms-grid;
+  display: grid;
+  height: 14.3vw;
+  -ms-grid-rows: 5fr 1fr;
+      grid-template-rows: 5fr 1fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas: "." "lookex";
+}
+
+#lookex {
+  background-color: rgba(79, 175, 53, 0.8);
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: lookex;
+  margin: 0vw;
+  border-radius: 0px 0px 0.4vw 0.4vw;
+}
+
+#ma {
+  -ms-grid-row: 3;
+  -ms-grid-column: 7;
+  -ms-grid-column-span: 5;
+  grid-area: map;
+  border-radius: 0.4vw;
+  background-size: 42.3vw 17.8vw;
+  background-image: url("/pic/le-bonch.jpg");
+  display: -ms-grid;
+  display: grid;
+  height: 14.3vw;
+  -ms-grid-rows: 5fr 1fr;
+      grid-template-rows: 5fr 1fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas: "." "mapex";
+}
+
+#mapex {
+  background-color: rgba(79, 175, 53, 0.8);
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: mapex;
+  margin: 0vw;
+  border-radius: 0px 0px 0.4vw 0.4vw;
+}
+
+#information {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 11;
+  grid-area: information;
+  border-radius: 0.4vw;
+  background-size: 90.3vw 23.8vw;
+  background-image: url("/pic/shop.jpg");
+  display: -ms-grid;
+  display: grid;
+  height: 14.3vw;
+  -ms-grid-rows: 5fr 1fr;
+      grid-template-rows: 5fr 1fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas: "." "infoex";
+}
+
+#infoex {
+  background-color: rgba(0, 7, 61, 0.8);
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: infoex;
+  margin: 0vw;
+  border-radius: 0px 0px 0.4vw 0.4vw;
+}
+/*# sourceMappingURL=index.css.map */

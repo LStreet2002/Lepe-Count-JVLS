@@ -1,0 +1,191 @@
+body {
+    border:0px;
+    width:100vw;
+    padding:0px;
+    margin:0px;
+    font-family: 'Oxygen-Light', sans-serif;
+overflow-x: hidden;
+}
+.nav {
+    display:grid;
+    background-color:#1A2050;
+    grid-template-rows:1fr 4fr 1fr;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    ". . . . . ."
+    "logo what look map vol info"
+    ". . . . . .";
+    height:7vw;
+    width:100vw;
+}
+a {
+    text-decoration: none;
+}
+.navtext {
+text-align:center;
+font-size:1.5vw;
+color:white;
+}
+.logoh {
+    grid-area:logo;
+}
+.logo {
+ 
+    height:5vw;
+    width:12.6vw;
+    margin-left:1vw;
+}
+.what {
+    grid-area:what;
+    
+}
+.look {
+    grid-area:look;
+    
+}
+.map {
+    grid-area:map;
+    
+}
+.vol {
+    grid-area:vol;
+}
+.info {
+    grid-area:info;
+    text-align: center;
+}
+#coverimg {
+    height:38.7vw;
+    overflow-y:hidden;
+    display:grid;
+    grid-template-columns:3fr 7fr 3fr;
+    grid-template-rows: 1fr 5fr 2fr;
+    grid-template-areas:
+    "top top top"
+    ". . ."
+    "left . right";
+    color:white;
+}
+#boxtop {
+    background-color:rgba(36, 36, 36,0.7);
+    grid-area:top;
+    text-align:center;
+    font-size:1.7vw;
+}
+#boxleft {
+grid-area:left;
+background-color:rgba(36, 36, 36,0.7);
+}
+#boxright {
+    grid-area:right;
+    background-color:rgba(36, 36, 36,0.7);
+}
+#cover {
+    margin-top:-23.7vw;
+    width:100vw;
+    position: fixed;
+    z-index: -50;
+}
+.line {
+    height:1vw;
+    width:90vw;
+    margin-left:5vw;
+margin-right:5vw;
+border-radius:1vw;
+background-color:#4FAF36;
+}
+.remainder {
+    padding-top:2vw;
+    background-color:white;
+}
+#linkbox {
+    display:grid;
+    grid-template-rows: 3fr 2fr 3fr 2fr 3fr;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-areas: 
+    "family family family . volunteer volunteer volunteer . whats whats whats"
+    ". . . . . . . . . . ."
+    "lookout lookout lookout lookout lookout . map map map map map"
+    ". . . . . . . . . . ."
+    "information information information information information information information information information information information";
+    width:90vw;
+    margin-left:5vw;
+    margin-right:5vw;
+    margin-top:5vw;
+    padding-bottom:5vw;
+}
+
+@mixin boxes ($gridarea,$pic,$width,$height,$gridt,$bheight) {
+    grid-area:$gridarea;
+    border-radius:0.4vw;
+    background-size: $width $height;
+    background-image: url("/pic/" +$pic);
+    display:grid;
+    height:14.3vw;
+    grid-template-rows:5fr 1fr;
+    grid-template-columns:1fr;
+    grid-template-areas:
+    "."
+    "" +$gridt +"";
+}
+#volunteer  {
+    @include boxes(volunteer,"volunteer1.jpg",25.3vw,14.8vw,voltex,14.3vw)
+}
+#voltex {
+    background-color: rgba(4, 136, 208,0.8);
+grid-area:voltex;
+
+margin: 0vw;
+    border-radius: 0px 0px 0.4vw 0.4vw;
+}
+#family {
+    @include boxes(family,"lepe-familyfun-480x320.jpg",25.3vw,14.8vw,famtex,14.3vw)
+}
+#famtex {
+    background-color: rgba(4, 136, 208,0.8);
+    grid-area:famtex;
+    
+    margin: 0vw;
+        border-radius: 0px 0px 0.4vw 0.4vw;
+}
+
+#whats  {
+    @include boxes(whats,"couple-and-child.png",25.3vw,14.8vw,whatex,14.3vw)
+}
+#whatex {
+    background-color: rgba(4, 136, 208,0.8);
+    grid-area:whatex;
+    
+    margin: 0vw;
+        border-radius: 0px 0px 0.4vw 0.4vw;
+}
+#lookout {
+    @include boxes(lookout,"view-from-lookout.png",42.3vw,14.8vw,lookex,14.3vw)
+}
+#lookex {
+    background-color:rgba(79, 175, 53,0.8);
+    grid-area:lookex;
+    
+    margin: 0vw;
+        border-radius: 0px 0px 0.4vw 0.4vw;
+}
+#ma {
+    @include boxes(map,"le-bonch.jpg",42.3vw,17.8vw,mapex,14.3vw)
+}
+#mapex {
+    background-color:rgba(79, 175, 53,0.8);
+    grid-area:mapex;
+    
+    margin: 0vw;
+        border-radius: 0px 0px 0.4vw 0.4vw;
+}
+#information {
+    @include boxes(information,"shop.jpg",90.3vw,23.8vw,infoex,14.3vw)
+}
+#infoex {
+    background-color: rgba(0, 7, 61, 0.8);;
+    grid-area:infoex;
+    
+    margin: 0vw;
+        border-radius: 0px 0px 0.4vw 0.4vw;
+}
