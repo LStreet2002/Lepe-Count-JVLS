@@ -176,6 +176,7 @@ a {
 
 #volunteer div:hover {
   height: 14.3vw;
+  border-radius: 0.4vw 0.4vw 0.4vw 0.4vw;
 }
 
 #voltex {
@@ -216,6 +217,7 @@ a {
 
 #family div:hover {
   height: 14.3vw;
+  border-radius: 0.4vw 0.4vw 0.4vw 0.4vw;
 }
 
 #famtex {
@@ -256,6 +258,7 @@ a {
 
 #whats div:hover {
   height: 14.3vw;
+  border-radius: 0.4vw 0.4vw 0.4vw 0.4vw;
 }
 
 #whatex {
@@ -296,6 +299,7 @@ a {
 
 #lookout div:hover {
   height: 14.3vw;
+  border-radius: 0.4vw 0.4vw 0.4vw 0.4vw;
 }
 
 #lookex {
@@ -336,6 +340,7 @@ a {
 
 #ma div:hover {
   height: 14.3vw;
+  border-radius: 0.4vw 0.4vw 0.4vw 0.4vw;
 }
 
 #mapex {
@@ -376,6 +381,7 @@ a {
 
 #information div:hover {
   height: 14.3vw;
+  border-radius: 0.4vw 0.4vw 0.4vw 0.4vw;
 }
 
 #infoex {
@@ -390,5 +396,79 @@ a {
   font-size: 2vw;
   text-align: center;
   margin-top: 1vw;
+}
+
+.hovd {
+  margin-left: 1vw;
+  font-size: 1.5vw;
+}
+
+.boxtext {
+  font-size: 1.4vw;
+  margin-right: 1vw;
+  margin-left: 1vw;
+}
+
+@media only screen and (max-width: 600px) {
+  #coverimg {
+    -ms-grid-columns: 2fr 2fr 2fr 2fr 2fr;
+        grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
+    -ms-grid-rows: 1fr 1fr 2fr 1fr 2fr;
+        grid-template-rows: 1fr 1fr 2fr 1fr 2fr;
+        grid-template-areas: "top top top top top" ". . . . . " ". . right right right" ". . . . ." "left left left . .";
+  }
+  .boxtext {
+    margin-left: 8vw;
+    font-size: 2.2vw;
+  }
+  #linkbox {
+        grid-template-areas: "family family family family family . volunteer volunteer volunteer volunteer volunteer" ". . . . . . . . . . ." "lookout lookout lookout lookout lookout . map map map map map" ". . . . . . . . . . ." "information information information information information information information information information information information";
+  }
+  #whats {
+    display: none;
+  }
+  #volunteer {
+    height: 26vw;
+    background-size: 42.3vw 26vw;
+  }
+  #volunteer div {
+    height: 26vw;
+    border-radius: 0.4vw;
+  }
+  #family {
+    height: 26vw;
+    background-size: 42.3vw 26vw;
+  }
+  #family div {
+    height: 26vw;
+    border-radius: 0.4vw;
+  }
+  #lookout {
+    height: 26vw;
+    background-size: 42.3vw 26vw;
+  }
+  #lookout div {
+    height: 26vw;
+    border-radius: 0.4vw;
+  }
+  #ma {
+    height: 26vw;
+    background-size: 42.3vw 26vw;
+  }
+  #ma div {
+    height: 26vw;
+    border-radius: 0.4vw;
+  }
+  #information {
+    height: 26vw;
+    background-size: 90.3vw 26vw;
+  }
+  #information div {
+    height: 26vw;
+    border-radius: 0.4vw;
+  }
+  body {
+    overflow-y: scroll;
+  }
 }
 /*# sourceMappingURL=index.css.map */
