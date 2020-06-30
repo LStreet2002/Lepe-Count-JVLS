@@ -158,11 +158,24 @@ a {
   display: -ms-grid;
   display: grid;
   height: 14.3vw;
+  color: white;
   -ms-grid-rows: 5fr 1fr;
       grid-template-rows: 5fr 1fr;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
       grid-template-areas: "." "voltex";
+}
+
+#volunteer div {
+  margin: 0vw;
+  height: 4vw;
+  -webkit-transition: height 1s;
+  transition: height 1s;
+  overflow: hidden;
+}
+
+#volunteer div:hover {
+  height: 14.3vw;
 }
 
 #voltex {
@@ -185,11 +198,24 @@ a {
   display: -ms-grid;
   display: grid;
   height: 14.3vw;
+  color: white;
   -ms-grid-rows: 5fr 1fr;
       grid-template-rows: 5fr 1fr;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
       grid-template-areas: "." "famtex";
+}
+
+#family div {
+  margin: 0vw;
+  height: 4vw;
+  -webkit-transition: height 1s;
+  transition: height 1s;
+  overflow: hidden;
+}
+
+#family div:hover {
+  height: 14.3vw;
 }
 
 #famtex {
@@ -212,11 +238,24 @@ a {
   display: -ms-grid;
   display: grid;
   height: 14.3vw;
+  color: white;
   -ms-grid-rows: 5fr 1fr;
       grid-template-rows: 5fr 1fr;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
       grid-template-areas: "." "whatex";
+}
+
+#whats div {
+  margin: 0vw;
+  height: 4vw;
+  -webkit-transition: height 1s;
+  transition: height 1s;
+  overflow: hidden;
+}
+
+#whats div:hover {
+  height: 14.3vw;
 }
 
 #whatex {
@@ -239,11 +278,24 @@ a {
   display: -ms-grid;
   display: grid;
   height: 14.3vw;
+  color: white;
   -ms-grid-rows: 5fr 1fr;
       grid-template-rows: 5fr 1fr;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
       grid-template-areas: "." "lookex";
+}
+
+#lookout div {
+  margin: 0vw;
+  height: 4vw;
+  -webkit-transition: height 1s;
+  transition: height 1s;
+  overflow: hidden;
+}
+
+#lookout div:hover {
+  height: 14.3vw;
 }
 
 #lookex {
@@ -266,11 +318,24 @@ a {
   display: -ms-grid;
   display: grid;
   height: 14.3vw;
+  color: white;
   -ms-grid-rows: 5fr 1fr;
       grid-template-rows: 5fr 1fr;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
       grid-template-areas: "." "mapex";
+}
+
+#ma div {
+  margin: 0vw;
+  height: 4vw;
+  -webkit-transition: height 1s;
+  transition: height 1s;
+  overflow: hidden;
+}
+
+#ma div:hover {
+  height: 14.3vw;
 }
 
 #mapex {
@@ -293,6 +358,7 @@ a {
   display: -ms-grid;
   display: grid;
   height: 14.3vw;
+  color: white;
   -ms-grid-rows: 5fr 1fr;
       grid-template-rows: 5fr 1fr;
   -ms-grid-columns: 1fr;
@@ -300,12 +366,29 @@ a {
       grid-template-areas: "." "infoex";
 }
 
+#information div {
+  margin: 0vw;
+  height: 4vw;
+  -webkit-transition: height 1s;
+  transition: height 1s;
+  overflow: hidden;
+}
+
+#information div:hover {
+  height: 14.3vw;
+}
+
 #infoex {
   background-color: rgba(0, 7, 61, 0.8);
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: infoex;
-  margin: 0vw;
   border-radius: 0px 0px 0.4vw 0.4vw;
+}
+
+.hovt {
+  font-size: 2vw;
+  text-align: center;
+  margin-top: 1vw;
 }
 /*# sourceMappingURL=index.css.map */

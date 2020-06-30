@@ -122,12 +122,24 @@ background-color:#4FAF36;
     background-image: url("/pic/" +$pic);
     display:grid;
     height:14.3vw;
+    color:white;
     grid-template-rows:5fr 1fr;
     grid-template-columns:1fr;
     grid-template-areas:
     "."
     "" +$gridt +"";
-}
+    div {
+        margin: 0vw;
+        height:4vw;
+           
+            transition: height 1s;
+            overflow:hidden;
+    }
+    div:hover {
+        height: 14.3vw;
+        
+      }
+    }
 #volunteer  {
     @include boxes(volunteer,"volunteer1.jpg",25.3vw,14.8vw,voltex,14.3vw)
 }
@@ -181,11 +193,17 @@ margin: 0vw;
 }
 #information {
     @include boxes(information,"shop.jpg",90.3vw,23.8vw,infoex,14.3vw)
+    
 }
+
 #infoex {
     background-color: rgba(0, 7, 61, 0.8);;
     grid-area:infoex;
-    
-    margin: 0vw;
-        border-radius: 0px 0px 0.4vw 0.4vw;
+    border-radius: 0px 0px 0.4vw 0.4vw;
 }
+.hovt {
+    font-size:2vw;
+    text-align:center;
+    margin-top:1vw;
+}
+
