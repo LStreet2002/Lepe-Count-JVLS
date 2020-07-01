@@ -65,3 +65,10 @@ function dessert() {
     document.querySelector("#drinks").style.backgroundColor = "#00073D"
     document.querySelector("#dessert").style.backgroundColor = "#1A2050"
 }
+document.addEventListener('DOMContentLoaded', function () {
+    var elems = document.querySelectorAll('.carousel');
+    var instance = M.Carousel.init(elems, {
+        fullWidth: true,
+        indicators: true
+    });
+});

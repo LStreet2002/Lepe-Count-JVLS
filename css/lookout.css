@@ -146,31 +146,26 @@ a {
 
 #bdiv {
   height: 39vw;
-  background: black;
 }
 
 #ldiv {
   display: none;
   height: 39vw;
-  background: red;
 }
 
 #cdiv {
   display: none;
   height: 39vw;
-  background: blue;
 }
 
 #dediv {
   display: none;
   height: 39vw;
-  background: blueviolet;
 }
 
 #drdiv {
   display: none;
   height: 39vw;
-  background: chocolate;
 }
 
 #cardholder {
@@ -281,5 +276,64 @@ a {
   margin-right: 2vw;
   margin-left: 2vw;
   font-size: 1.4vw;
+}
+
+.carousel.carousel-slider.center {
+  height: 39vw !important;
+}
+
+.carousel-item {
+  display: -ms-grid !important;
+  display: grid !important;
+  -ms-grid-rows: 1fr 4fr 2fr;
+      grid-template-rows: 1fr 4fr 2fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas: "name" " . " "desc";
+  min-height: 0px !important;
+  background-image: url("/pic/chish.jpg");
+  background-size: 100vw 39vw;
+}
+
+.foodname {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: name;
+  background: rgba(40, 40, 40, 0.44);
+}
+
+.foodesc {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: desc;
+  background: rgba(40, 40, 40, 0.44);
+}
+
+.naa {
+  margin-top: 2vw;
+  font-size: 2vw !important;
+}
+
+.dess {
+  font-size: 1.5vw !important;
+}
+
+.carousel .indicators .indicator-item {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  height: 1vw !important;
+  width: 1vw !important;
+  margin: 24px 4px;
+  background-color: rgba(255, 255, 255, 0);
+  border: solid black 0.1vw;
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
+  border-radius: 50%;
+}
+
+.carousel .indicators .indicator-item.active {
+  background-color: #fff;
+  border: none;
 }
 /*# sourceMappingURL=lookout.css.map */

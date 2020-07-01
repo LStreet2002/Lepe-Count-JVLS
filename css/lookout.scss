@@ -102,27 +102,22 @@ background-color:#1A2050;
 }
 #bdiv {
 height:39vw;
-background:black;
 }
 #ldiv {
     display:none;
     height:39vw;
-    background:red;
 }
 #cdiv {
     display:none;
     height:39vw;
-    background: blue;
 }
 #dediv {
     display:none;
     height:39vw;
-    background: blueviolet;
 }
 #drdiv {
     display:none;
     height:39vw;
-    background: chocolate;
 }
 #cardholder {
     display:grid;
@@ -208,3 +203,51 @@ background:black;
     margin-left:2vw;
     font-size:1.4vw;
 }
+.carousel.carousel-slider.center {
+    height:39vw !important;
+}
+.carousel-item {
+    display:grid!important;
+    grid-template-rows:1fr 4fr 2fr;
+    grid-template-columns:1fr;
+    grid-template-areas:
+    "name"
+    " . "
+    "desc";
+    min-height:0px !important;
+    background-image:url("/pic/chish.jpg");
+    background-size:100vw 39vw;
+}
+.foodname {
+    grid-area:name;
+background: rgba(40, 40, 40, 0.44);
+}
+.foodesc {
+    grid-area:desc;
+    background:rgba(40, 40, 40, 0.44);
+}
+.naa {
+   margin-top:2vw;
+   font-size:2vw !important;
+}
+.dess {
+    font-size:1.5vw !important;
+}
+.carousel .indicators .indicator-item {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    height: 1vw !important;
+    width: 1vw !important;
+    margin: 24px 4px;
+    background-color: rgba(255,255,255,0);
+    border:solid black 0.1vw;
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s;
+    border-radius: 50%;
+}
+.carousel .indicators .indicator-item.active {
+    background-color: #fff;
+    border:none;
+}
+
