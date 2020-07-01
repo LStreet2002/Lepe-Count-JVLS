@@ -11,11 +11,11 @@ body {
   display: -ms-grid;
   display: grid;
   background-color: #1A2050;
-  -ms-grid-rows: 1fr 4fr 1fr;
-      grid-template-rows: 1fr 4fr 1fr;
+  -ms-grid-rows: 4fr;
+      grid-template-rows: 4fr;
   -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-      grid-template-areas: ". . . . . ." "logo what look map vol info" ". . . . . .";
+      grid-template-areas: "logo what look map vol info";
   height: 7vw;
   width: 100vw;
 }
@@ -28,10 +28,11 @@ a {
   text-align: center;
   font-size: 1.5vw;
   color: white;
+  margin-top: 2.5vw;
 }
 
 .logoh {
-  -ms-grid-row: 2;
+  -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: logo;
 }
@@ -40,18 +41,21 @@ a {
   height: 5vw;
   width: 12.6vw;
   margin-left: 1vw;
+  margin-top: 1vw;
 }
 
 .what {
-  -ms-grid-row: 2;
+  -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: what;
+  height: 7w;
 }
 
 .look {
-  -ms-grid-row: 2;
+  -ms-grid-row: 1;
   -ms-grid-column: 3;
   grid-area: look;
+  height: 7w;
 }
 
 .map {
@@ -59,19 +63,22 @@ a {
   -ms-grid-column: 7;
   -ms-grid-column-span: 5;
   grid-area: map;
+  height: 7w;
 }
 
 .vol {
-  -ms-grid-row: 2;
+  -ms-grid-row: 1;
   -ms-grid-column: 5;
   grid-area: vol;
+  height: 7w;
 }
 
 .info {
-  -ms-grid-row: 2;
+  -ms-grid-row: 1;
   -ms-grid-column: 6;
   grid-area: info;
   text-align: center;
+  height: 7w;
 }
 
 #coverimg {

@@ -1,0 +1,210 @@
+body {
+    border:0px;
+    width:100vw;
+    padding:0px;
+    margin:0px;
+    font-family: 'Oxygen-Light', sans-serif;
+overflow-x: hidden;
+}
+.nav {
+    display:grid;
+    background-color:#1A2050;
+    grid-template-rows:4fr;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "logo what look map vol info";
+    height:7vw;
+    width:100vw;
+ 
+}
+a {
+    text-decoration: none;
+}
+.navtext {
+text-align:center;
+font-size:1.5vw;
+color:white;
+}
+.logoh {
+    grid-area:logo;
+}
+.navtext {
+    text-align:center;
+    font-size:1.5vw;
+    color:white;
+    margin-top:2.5vw;
+    }
+    .logoh {
+        grid-area:logo;
+    }
+    .logo {
+     
+        height:5vw;
+        width:12.6vw;
+        margin-left:1vw;
+        margin-top:1vw;
+    }
+    .what {
+        grid-area:what;
+        height:7w;
+        
+    }
+    .look {
+        grid-area:look;
+        height:7w;
+        background-color:#00073D ;
+    }
+    .map {
+        grid-area:map;
+        height:7w;
+    }
+    .vol {
+        grid-area:vol;
+        height:7w;
+    }
+    .info {
+        grid-area:info;
+        text-align: center;
+        height:7w;
+    }
+#carselnav {
+    display:grid;
+    background-color:#00073D ;
+    grid-template-rows:4fr;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "breakfast lunch children dessert drinks";
+    height:7vw;
+    width:100vw;
+}
+#breakfast {
+grid-area:breakfast;
+background-color:#1A2050;
+
+}
+#lunch {
+    grid-area:lunch;
+}
+#children {
+    grid-area:children;
+}
+#dessert {
+    grid-area:dessert;
+}
+#drinks {
+    grid-area:drinks;
+}
+.carselt {
+    text-align:center;
+    font-size:2vw;
+    margin-top:2.4vw;
+    color:white;
+}
+#bdiv {
+height:39vw;
+background:black;
+}
+#ldiv {
+    display:none;
+    height:39vw;
+    background:red;
+}
+#cdiv {
+    display:none;
+    height:39vw;
+    background: blue;
+}
+#dediv {
+    display:none;
+    height:39vw;
+    background: blueviolet;
+}
+#drdiv {
+    display:none;
+    height:39vw;
+    background: chocolate;
+}
+#cardholder {
+    display:grid;
+    grid-template-columns:8fr 1fr 8fr;
+    grid-template-rows:1fr;
+    grid-template-areas:
+    "ingred . dog";
+    margin-top:3vw;
+    margin-right:5vw;
+    margin-left:5vw;
+    margin-bottom:3vw;
+}
+#ingred {
+    background-color:#4FAF36;
+    height:41vw;
+    width:40vw;
+    grid-area:ingred;
+    border-radius:0.5vw;
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows:2fr 0.7fr 7fr;
+    grid-template-areas:
+    "ingredimg"
+    "ingredtitle"
+    "ingredtext";
+    overflow:hidden;
+    color:white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+}
+#dog {
+    background-color:#4FAF36;
+    height:41vw;
+    width:40vw;
+    grid-area:dog;
+    border-radius:1vw;
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows:2fr 0.7fr 7fr;
+    grid-template-areas:
+    "dogimg"
+    "dogtitle"
+    "dogtext";
+    overflow:hidden;
+    color:white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+}
+#ingredimage {
+    grid-area:ingredimg;
+    width:40vw;
+    height:20vw;
+    margin-top:-5vw;
+
+}
+#ingredtitle {
+    grid-area:ingredtitle;
+    margin-right:2vw;
+    margin-left:2vw;
+    font-size:1.8vw;
+}
+#ingredtext {
+    grid-area:ingredtext;
+    margin-right:2vw;
+    margin-left:2vw;
+    font-size:1.4vw;
+}
+
+#dogimage {
+    grid-area:dogimg;
+    width:40vw;
+    height:20vw;
+    margin-top:-5vw;
+
+}
+#dogtitle {
+    grid-area:dogtitle;
+    margin-right:2vw;
+    margin-left:2vw;
+    font-size:1.8vw;
+}
+#dogtext {
+    grid-area:dogtext;
+    margin-right:2vw;
+    margin-left:2vw;
+    font-size:1.4vw;
+}
