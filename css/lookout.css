@@ -184,7 +184,7 @@ a {
 
 #ingred {
   background-color: #4FAF36;
-  height: 41vw;
+  height: 45vw;
   width: 40vw;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
@@ -194,8 +194,8 @@ a {
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-  -ms-grid-rows: 2fr 0.7fr 7fr;
-      grid-template-rows: 2fr 0.7fr 7fr;
+  -ms-grid-rows: 1fr 0.7fr 8fr;
+      grid-template-rows: 1fr 0.7fr 8fr;
       grid-template-areas: "ingredimg" "ingredtitle" "ingredtext";
   overflow: hidden;
   color: white;
@@ -205,7 +205,7 @@ a {
 
 #dog {
   background-color: #4FAF36;
-  height: 41vw;
+  height: 45vw;
   width: 40vw;
   -ms-grid-row: 1;
   -ms-grid-column: 3;
@@ -215,8 +215,8 @@ a {
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-  -ms-grid-rows: 2fr 0.7fr 7fr;
-      grid-template-rows: 2fr 0.7fr 7fr;
+  -ms-grid-rows: 1fr 0.7fr 8fr;
+      grid-template-rows: 1fr 0.7fr 8fr;
       grid-template-areas: "dogimg" "dogtitle" "dogtext";
   overflow: hidden;
   color: white;
@@ -239,7 +239,7 @@ a {
   grid-area: ingredtitle;
   margin-right: 2vw;
   margin-left: 2vw;
-  font-size: 1.8vw;
+  font-size: 1.6vw;
 }
 
 #ingredtext {
@@ -248,7 +248,7 @@ a {
   grid-area: ingredtext;
   margin-right: 2vw;
   margin-left: 2vw;
-  font-size: 1.4vw;
+  font-size: 1.3vw;
 }
 
 #dogimage {
@@ -266,7 +266,7 @@ a {
   grid-area: dogtitle;
   margin-right: 2vw;
   margin-left: 2vw;
-  font-size: 1.8vw;
+  font-size: 1.6vw;
 }
 
 #dogtext {
@@ -275,7 +275,7 @@ a {
   grid-area: dogtext;
   margin-right: 2vw;
   margin-left: 2vw;
-  font-size: 1.4vw;
+  font-size: 1.3vw;
 }
 
 .carousel.carousel-slider.center {
@@ -324,7 +324,7 @@ a {
   cursor: pointer;
   height: 1vw !important;
   width: 1vw !important;
-  margin: 24px 4px;
+  margin: 2vw 4px;
   background-color: rgba(255, 255, 255, 0);
   border: solid black 0.1vw;
   -webkit-transition: background-color .3s;
@@ -335,5 +335,109 @@ a {
 .carousel .indicators .indicator-item.active {
   background-color: #fff;
   border: none;
+}
+
+@media only screen and (max-width: 600px) {
+  #cardholder {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 6fr 0.3fr 6fr;
+        grid-template-rows: 6fr 0.3fr 6fr;
+        grid-template-areas: "ingred"  " . " "dog";
+    margin-top: 3vw;
+    margin-right: 5vw;
+    margin-left: 5vw;
+    margin-bottom: 3vw;
+  }
+  #ingred {
+    background-color: #4FAF36;
+    height: 70vw;
+    width: 90vw;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: ingred;
+    border-radius: 0.7vw;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 2fr 0.7fr 7fr;
+        grid-template-rows: 2fr 0.7fr 7fr;
+        grid-template-areas: "ingredimg" "ingredtitle" "ingredtext";
+    overflow: hidden;
+    color: white;
+    -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  }
+  #dog {
+    background-color: #4FAF36;
+    height: 79vw;
+    width: 90vw;
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: dog;
+    border-radius: 1vw;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 2fr 0.7fr 7fr;
+        grid-template-rows: 2fr 0.7fr 7fr;
+        grid-template-areas: "dogimg" "dogtitle" "dogtext";
+    overflow: hidden;
+    color: white;
+    -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  }
+  #ingredimage {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: ingredimg;
+    width: 90vw;
+    height: 30vw;
+    margin-top: -5vw;
+  }
+  #ingredtitle {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: ingredtitle;
+    margin-right: 3vw;
+    margin-left: 3vw;
+    font-size: 2.5vw;
+  }
+  #ingredtext {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: ingredtext;
+    margin-right: 3vw;
+    margin-left: 3vw;
+    font-size: 2.2vw;
+  }
+  #dogimage {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: dogimg;
+    width: 90vw;
+    height: 30vw;
+    margin-top: -5vw;
+  }
+  #dogtitle {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: dogtitle;
+    margin-right: 3vw;
+    margin-left: 3vw;
+    font-size: 2.5vw;
+  }
+  #dogtext {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: dogtext;
+    margin-right: 3vw;
+    margin-left: 3vw;
+    font-size: 2.2vw;
+  }
 }
 /*# sourceMappingURL=lookout.css.map */

@@ -132,13 +132,13 @@ height:39vw;
 }
 #ingred {
     background-color:#4FAF36;
-    height:41vw;
+    height:45vw;
     width:40vw;
     grid-area:ingred;
     border-radius:0.5vw;
     display:grid;
     grid-template-columns:1fr;
-    grid-template-rows:2fr 0.7fr 7fr;
+    grid-template-rows:1fr 0.7fr 8fr;
     grid-template-areas:
     "ingredimg"
     "ingredtitle"
@@ -149,13 +149,13 @@ height:39vw;
 }
 #dog {
     background-color:#4FAF36;
-    height:41vw;
+    height:45vw;
     width:40vw;
     grid-area:dog;
     border-radius:1vw;
     display:grid;
     grid-template-columns:1fr;
-    grid-template-rows:2fr 0.7fr 7fr;
+    grid-template-rows:1fr 0.7fr 8fr;
     grid-template-areas:
     "dogimg"
     "dogtitle"
@@ -175,13 +175,13 @@ height:39vw;
     grid-area:ingredtitle;
     margin-right:2vw;
     margin-left:2vw;
-    font-size:1.8vw;
+    font-size:1.6vw;
 }
 #ingredtext {
     grid-area:ingredtext;
     margin-right:2vw;
     margin-left:2vw;
-    font-size:1.4vw;
+    font-size:1.3vw;
 }
 
 #dogimage {
@@ -195,13 +195,13 @@ height:39vw;
     grid-area:dogtitle;
     margin-right:2vw;
     margin-left:2vw;
-    font-size:1.8vw;
+    font-size:1.6vw;
 }
 #dogtext {
     grid-area:dogtext;
     margin-right:2vw;
     margin-left:2vw;
-    font-size:1.4vw;
+    font-size:1.3vw;
 }
 .carousel.carousel-slider.center {
     height:39vw !important;
@@ -239,7 +239,7 @@ background: rgba(40, 40, 40, 0.44);
     cursor: pointer;
     height: 1vw !important;
     width: 1vw !important;
-    margin: 24px 4px;
+    margin: 2vw 4px;
     background-color: rgba(255,255,255,0);
     border:solid black 0.1vw;
     -webkit-transition: background-color .3s;
@@ -250,4 +250,91 @@ background: rgba(40, 40, 40, 0.44);
     background-color: #fff;
     border:none;
 }
-
+@media only screen and (max-width: 600px) {
+    #cardholder {
+        display:grid;
+        grid-template-columns:1fr;
+        grid-template-rows:6fr 0.3fr 6fr;
+        grid-template-areas:
+        "ingred" 
+        " . "
+        "dog";
+        margin-top:3vw;
+        margin-right:5vw;
+        margin-left:5vw;
+        margin-bottom:3vw;
+    }
+    #ingred {
+        background-color:#4FAF36;
+        height:70vw;
+        width:90vw;
+        grid-area:ingred;
+        border-radius:0.7vw;
+        display:grid;
+        grid-template-columns:1fr;
+        grid-template-rows:2fr 0.7fr 7fr;
+        grid-template-areas:
+        "ingredimg"
+        "ingredtitle"
+        "ingredtext";
+        overflow:hidden;
+        color:white;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+    }
+    #dog {
+        background-color:#4FAF36;
+        height:79vw;
+        width:90vw;
+        grid-area:dog;
+        border-radius:1vw;
+        display:grid;
+        grid-template-columns:1fr;
+        grid-template-rows:2fr 0.7fr 7fr;
+        grid-template-areas:
+        "dogimg"
+        "dogtitle"
+        "dogtext";
+        overflow:hidden;
+        color:white;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+    }
+    #ingredimage {
+        grid-area:ingredimg;
+        width:90vw;
+        height:30vw;
+        margin-top:-5vw;
+    
+    }
+    #ingredtitle {
+        grid-area:ingredtitle;
+        margin-right:3vw;
+        margin-left:3vw;
+        font-size:2.5vw;
+    }
+    #ingredtext {
+        grid-area:ingredtext;
+        margin-right:3vw;
+        margin-left:3vw;
+        font-size:2.2vw;
+    }
+    
+    #dogimage {
+        grid-area:dogimg;
+        width:90vw;
+        height:30vw;
+        margin-top:-5vw;
+    
+    }
+    #dogtitle {
+        grid-area:dogtitle;
+        margin-right:3vw;
+        margin-left:3vw;
+        font-size:2.5vw;
+    }
+    #dogtext {
+        grid-area:dogtext;
+        margin-right:3vw;
+        margin-left:3vw;
+        font-size:2.2vw;
+    }
+}

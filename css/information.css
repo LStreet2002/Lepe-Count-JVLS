@@ -1,0 +1,232 @@
+body {
+  border: 0px;
+  width: 100vw;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Oxygen-Light', sans-serif;
+  overflow-x: hidden;
+}
+
+.nav {
+  display: -ms-grid;
+  display: grid;
+  background-color: #1A2050;
+  -ms-grid-rows: 4fr;
+      grid-template-rows: 4fr;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-areas: "logo what look map vol info";
+  height: 7vw;
+  width: 100vw;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navtext {
+  text-align: center;
+  font-size: 1.5vw;
+  color: white;
+}
+
+.logoh {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: logo;
+}
+
+.navtext {
+  text-align: center;
+  font-size: 1.5vw;
+  color: white;
+  margin-top: 2.5vw;
+}
+
+.logoh {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: logo;
+}
+
+.logo {
+  height: 5vw;
+  width: 12.6vw;
+  margin-left: 1vw;
+  margin-top: 1vw;
+}
+
+.what {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: what;
+  height: 7w;
+}
+
+.look {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: look;
+  height: 7w;
+}
+
+.map {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: map;
+  height: 7w;
+}
+
+.vol {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+  grid-area: vol;
+  height: 7w;
+}
+
+.info {
+  -ms-grid-row: 1;
+  -ms-grid-column: 6;
+  grid-area: info;
+  height: 7w;
+  background-color: #00073D;
+}
+
+.line {
+  height: 0.5vw;
+  width: 70vw;
+  margin-left: 3vw;
+  margin-right: 5vw;
+  border-radius: 1vw;
+  background-color: #4FAF36;
+}
+
+.time {
+  margin-left: 3vw;
+}
+
+.parking {
+  margin-left: 3vw;
+}
+
+.location {
+  margin-left: 3vw;
+}
+
+.endbox {
+  background-color: #00073D;
+  text-align: center;
+  font-size: 1.4vw;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  color: white;
+  margin-right: 5vw;
+  margin-left: 5vw;
+  margin-bottom: 2vw;
+  margin-top: 2vw;
+}
+
+#map {
+  width: 94vw;
+}
+
+.locationt {
+  font-size: 3.4vw;
+}
+
+.parkingsh {
+  font-size: 2.3vw;
+}
+
+.parkingp {
+  font-size: 1.5vw;
+  color: #585757;
+  line-height: 2vw;
+}
+
+.parkingbold {
+  font-size: 2.5vw;
+  line-height: 2.4vw;
+  margin-right: 25vw;
+}
+
+.timet {
+  color: #585757;
+  line-height: 2.9vw;
+  font-size: 1.3vw;
+}
+
+.parkingh {
+  font-size: 3.4vw;
+}
+
+.timeh {
+  font-size: 3.4vw;
+}
+
+@media only screen and (max-width: 600px) {
+  .timet {
+    color: #585757;
+    line-height: 3.2vw;
+    font-size: 1.5vw;
+  }
+  .parkingbold {
+    font-size: 2.9vw;
+    line-height: 2.9vw;
+    margin-right: 0vw;
+  }
+  .line {
+    height: 0.5vw;
+    width: 90vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    border-radius: 1vw;
+    background-color: #4FAF36;
+  }
+  .time {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    text-align: center;
+  }
+  .parking {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    text-align: center;
+  }
+  .location {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    text-align: center;
+  }
+  #map {
+    width: 90vw;
+  }
+  .endbox {
+    background-color: #00073D;
+    text-align: center;
+    font-size: 2.2vw;
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    color: white;
+    margin-right: 5vw;
+    margin-left: 5vw;
+    margin-bottom: 2vw;
+    margin-top: 2vw;
+  }
+  .timet {
+    color: #585757;
+    line-height: 3.7vw;
+    font-size: 1.9vw;
+  }
+  .parkingp {
+    font-size: 2.2vw;
+    color: #585757;
+    line-height: 3vw;
+  }
+  .parkingsh {
+    font-size: 2.9vw;
+  }
+}
+/*# sourceMappingURL=information.css.map */
