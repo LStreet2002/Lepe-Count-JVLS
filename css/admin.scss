@@ -1,0 +1,21 @@
+#login-holder {
+    display:grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    ". . ."
+    " . email ."
+    ". . ."
+    ". password ."
+    ". . ."
+    ". login .";
+}
+#login-email {
+grid-area:email;
+}
+#login-password {
+grid-area:password;
+}
+#login {
+    grid-area:login;
+}
