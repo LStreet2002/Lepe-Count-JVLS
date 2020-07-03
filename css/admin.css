@@ -1,28 +1,140 @@
+body {
+  border: 0px;
+  width: 100vw;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Oxygen', sans-serif;
+  overflow-x: hidden;
+}
+
+#loginpage {
+  background-color: #7af05d;
+  height: 100vh;
+  margin: none;
+}
+
 #login-holder {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 5fr 1fr;
       grid-template-columns: 1fr 5fr 1fr;
-  -ms-grid-rows: 2fr 1fr 1fr 1fr 1fr 1fr;
-      grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr;
-      grid-template-areas: ". . ." " . email ." ". . ." ". password ." ". . ." ". login .";
+  -ms-grid-rows: 0.5fr 2fr 0.8fr 1fr 0.8fr 1fr 0.8fr 1fr;
+      grid-template-rows: 0.5fr 2fr 0.8fr 1fr 0.8fr 1fr 0.8fr 1fr;
+      grid-template-areas: ". . ." " . logo ." ". . ." " . email ." ". . ." ". password ." ". . ." ". login .";
 }
 
 #login-email {
-  -ms-grid-row: 2;
+  -ms-grid-row: 4;
   -ms-grid-column: 2;
   grid-area: email;
+  border: none;
+  font-family: 'Oxygen', sans-serif;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  font-size: 2vw;
 }
 
 #login-password {
-  -ms-grid-row: 4;
+  -ms-grid-row: 6;
   -ms-grid-column: 2;
   grid-area: password;
+  border: none;
+  font-family: 'Oxygen', sans-serif;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  font-size: 2vw;
 }
 
 #login {
-  -ms-grid-row: 6;
+  -ms-grid-row: 8;
   -ms-grid-column: 2;
   grid-area: login;
+  background-color: #04B8D0;
+  border: none;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  font-family: 'Oxygen', sans-serif !important;
+  font-size: 2vw;
+  color: white;
+}
+
+#formlepe {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: logo;
+  height: 9vw;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+#foodform {
+  display: -ms-grid !important;
+  display: grid !important;
+  -ms-grid-rows: 1fr 4fr 2fr;
+      grid-template-rows: 1fr 4fr 2fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas: "name" " . " "desc";
+  min-height: 0px !important;
+  background-size: 80vw 30vw;
+  height: 39vw;
+  width: 80vw;
+  margin-left: 10vw;
+  background-image: url("/pic/placeholder.jpeg");
+  overflow: hidden;
+}
+
+#nameform {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: name;
+  background: rgba(40, 40, 40, 0.44);
+  padding-left: 2vw;
+  padding-right: 2vw;
+  font-size: 1.9vw;
+  color: white;
+  text-align: center;
+}
+
+#descform {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: desc;
+  background: rgba(40, 40, 40, 0.44);
+  padding-left: 2vw;
+  padding-right: 2vw;
+  font-size: 1.9vw;
+}
+
+.naa {
+  margin-top: 2vw;
+  font-size: 2vw !important;
+}
+
+.dess {
+  font-size: 1.5vw !important;
+}
+
+#dessform {
+  height: 3.5vw;
+  width: 76vw;
+  margin-top: 2vw;
+  background: rgba(40, 40, 40, 0);
+  color: white;
+  border: none;
+  text-align: center;
+}
+
+#priceform {
+  height: 2.5vw;
+  width: 76vw;
+  margin-top: 2vw;
+  background: rgba(40, 40, 40, 0);
+  color: white;
+  border: none;
+  text-align: center;
 }
 /*# sourceMappingURL=admin.css.map */

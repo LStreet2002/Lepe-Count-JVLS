@@ -3,14 +3,14 @@ body {
   width: 100vw;
   padding: 0px;
   margin: 0px;
-  font-family: 'Oxygen-Light', sans-serif;
+  font-family: 'Oxygen', sans-serif;
   overflow-x: hidden;
 }
 
 .nav {
   display: -ms-grid;
   display: grid;
-  background-color: #1A2050;
+  background-color: #ffffff;
   -ms-grid-rows: 4fr;
       grid-template-rows: 4fr;
   -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
