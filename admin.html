@@ -29,23 +29,42 @@
                     <input id="priceform" placeholder="insert price"></form>
                 </div>
             </div>
-            <button>SUBMIT</button>
+            <div id="carselnav">
+                <a href="javascript:void0" id="breakfast" onclick=selectb()>
+                    <p class="carselt">Breakfast</p>
+                </a>
+                <a href="javascript:void0" id="lunch" onclick=selectl()>
+                    <p class="carselt">Lunch</p>
+                </a>
+                <a href="javascript:void0" id="children" onclick=selectc()>
+                    <p class="carselt">Children</p>
+                </a>
+                <a href="javascript:void0" id="dessert" onclick=selectde()>
+                    <p class="carselt">Dessert</p>
+                </a>
+                <a href="javascript:void0" id="drinks" onclick=selectdr()>
+                    <p class="carselt">Drinks</p>
+                </a>
+            </div>
+
+            <input input type="file" value="upload" accept=".png,.jpg,.gif,.tif" name="chooser" id="chooser"></input>
+            <button onclick=vals()>SUBMIT</button>
         </div>
+    </div>
 
 
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
 
-        <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
-
-        <!-- TODO: Add SDKs for Firebase products that you want to use
+    <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-        <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
 
 
-        <script src="js/admin.js"></script>
-        <script src="js/firebase.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/firebase.js"></script>
 </body>
 
 </html>

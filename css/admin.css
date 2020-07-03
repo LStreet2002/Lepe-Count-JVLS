@@ -79,10 +79,9 @@ body {
       grid-template-columns: 1fr;
       grid-template-areas: "name" " . " "desc";
   min-height: 0px !important;
-  background-size: 80vw 30vw;
+  background-size: 100vw 39vw;
   height: 39vw;
-  width: 80vw;
-  margin-left: 10vw;
+  width: 100vw;
   background-image: url("/pic/placeholder.jpeg");
   overflow: hidden;
 }
@@ -104,8 +103,8 @@ body {
   -ms-grid-column: 1;
   grid-area: desc;
   background: rgba(40, 40, 40, 0.44);
-  padding-left: 2vw;
-  padding-right: 2vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
   font-size: 1.9vw;
 }
 
@@ -120,7 +119,7 @@ body {
 
 #dessform {
   height: 3.5vw;
-  width: 76vw;
+  width: 90vw;
   margin-top: 2vw;
   background: rgba(40, 40, 40, 0);
   color: white;
@@ -130,11 +129,66 @@ body {
 
 #priceform {
   height: 2.5vw;
-  width: 76vw;
+  width: 90vw;
   margin-top: 2vw;
   background: rgba(40, 40, 40, 0);
   color: white;
   border: none;
   text-align: center;
+}
+
+#carselnav {
+  display: -ms-grid;
+  display: grid;
+  background-color: #00073D;
+  -ms-grid-rows: 4fr;
+      grid-template-rows: 4fr;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-areas: "breakfast lunch children dessert drinks";
+  height: 7vw;
+  width: 100vw;
+}
+
+#breakfast {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: breakfast;
+  background-color: #00073D;
+}
+
+#lunch {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: lunch;
+}
+
+#children {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: children;
+}
+
+#dessert {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: dessert;
+}
+
+#drinks {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+  grid-area: drinks;
+}
+
+.carselt {
+  text-align: center;
+  font-size: 2vw;
+  margin-top: 2.4vw;
+  color: white;
+}
+
+a {
+  text-decoration: none;
 }
 /*# sourceMappingURL=admin.css.map */
