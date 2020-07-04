@@ -25,7 +25,6 @@
             <h2 class="adminhead">The lookout</h2>
             <p class="admintext">To add a new item to the menu, simply fill out the form below, and upload an image to
                 go with it.</p>
-            <p class="admintext">To update an exisiting item, change it's value in the table beneath.</p>
             <div id="foodform">
                 <input id="nameform" placeholder="insert name"></form>
                 <div id="descform">
@@ -52,12 +51,14 @@
             </div>
 
 
-            <input input type="file" value="upload" accept=".png,.jpg,.gif,.tif,.webp" style="display:none"
-                name="chooser" id="chooser"></input>
+            <input type="file" accept=".png,.jpg,.gif,.tif,.webp" style="display:none" name="chooser"
+                id="chooser"></input>
             <div id="pseudo" onclick=choosecl()>SELECT IMAGE</div>
             <button id="sub" onclick=vals()>SUBMIT</button>
         </div>
-
+        <p class="admintext">To update an exisiting item, change it's value in the table beneath.For ease of use, try to
+            keep at least one item in each category at a time.Additionally,ensure all items and images have unique
+            names. </p>
         <div id="updateform"></div>
     </div>
 
