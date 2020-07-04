@@ -154,3 +154,64 @@ background-color:#00073D;
 a {
     text-decoration: none;
 }
+#pseudo {
+    background-color:#04B8D0;
+    border:none;
+    padding-top:1vw;
+    padding-bottom:1vw;
+    font-family: 'Oxygen', sans-serif !important;
+    font-size:2vw;
+    color:white;
+    justify-self:center;
+    text-align: center;
+    margin:auto;
+    margin-top:2vw;
+    width:25vw;
+}
+#sub {
+    background-color:#4054c9;
+    border:none;
+    padding-top:1.3vw;
+    padding-bottom:1.3vw;
+    font-family: 'Oxygen', sans-serif !important;
+    font-size:3vw;
+    color:white;
+    justify-self:center;
+    text-align: center;
+    margin:auto;
+    margin-top:2vw;
+    width:35vw;
+    margin-left:32.5vw;
+    margin-bottom:2vw;
+}
+.adminhead {
+    font-size:2vw;
+    margin-left:2vw;
+}
+.admintext {
+    font-size:1.3vw;
+    margin-bottom:3vw;
+    margin-left:2vw;
+}
+
+.name {
+    grid-area:name;
+}
+.desc {
+    grid-area:desc;
+}
+.price {
+    grid-area:price;
+}
+.update {
+    grid-area:update;
+}
+.delete {
+    grid-area:delete;
+}
+.menuform {
+    margin-top:3vw
+}
+.menusub {
+margin-top:1vw;
+}

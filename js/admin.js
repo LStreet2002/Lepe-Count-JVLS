@@ -55,6 +55,9 @@ function vals() {
             output.style.backgroundImage = "url(/pic/placeholder.jpeg)"
         })
 }
+function choosecl() {
+    document.getElementById("chooser").click(); // Click on the checkbox
+}
 
 
 
@@ -122,4 +125,333 @@ function selectde() {
     document.querySelector("#children").name = ""
     document.querySelector("#drinks").name = ""
     document.querySelector("#dessert").name = "choiced"
+}
+bmenu = [];
+lmenu = [];
+cmenu = [];
+demenu = [];
+drmenu = [];
+var tabs = ["breakfast", "lunch", "children", "dessert", "drinks"]
+
+window.addEventListener("DOMContentLoaded", async function updates() {
+    await db.collection("breakfast")
+        .get()
+        .then(async function (querySnapshot) {
+            querySnapshot.forEach(function (doc) {
+                // doc.data() is never undefined for query doc snapshots
+                bmenu.push(doc.data())
+
+            })
+            var thesection = document.createElement("div")
+            thesection.id = "breakfastform"
+            thesection.classList.add("menuform")
+
+            document.querySelector("#updateform").appendChild(thesection)
+            for (bcount = 0; bcount < bmenu.length; bcount++) {
+                var storage = firebase.storage();
+                await storageRef
+                    .child("backgrounds/" + bmenu[bcount].background)
+                    .getDownloadURL()
+                    .then(function (url) {
+                        var grid = document.createElement("div")
+                        grid.classList.add("menusub")
+                        grid.id = "breakfast" + bcount
+                        grid.style.display = "grid"
+                        grid.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr"
+                        grid.style.gridTemplateRows = "1fr"
+                        grid.style.gridTemplateAreas = '"' + "name desc price update delete" + '"'
+                        grid.name = "breakfast"
+
+                        var name = document.createElement("div")
+                        name.classList.add("name")
+                        name.innerText = bmenu[bcount].name
+
+                        var desc = document.createElement("input")
+                        desc.classList.add("desc")
+                        desc.value = bmenu[bcount].description
+
+                        var price = document.createElement("input")
+                        price.classList.add("price")
+                        price.value = bmenu[bcount].price
+
+                        var update = document.createElement("button")
+                        update.classList.add("update")
+                        update.innerText = "update"
+                        update.setAttribute("onclick", "update(this)");
+
+                        var delet = document.createElement("button")
+                        delet.classList.add("delete")
+                        delet.innerText = "delete"
+                        delet.setAttribute("onclick", "delet(this)");
+                        delet.name = bmenu[bcount].background
+
+                        grid.appendChild(name)
+                        grid.appendChild(desc)
+                        grid.appendChild(price)
+                        grid.appendChild(update)
+                        grid.appendChild(delet)
+
+                        document.querySelector("#breakfastform").appendChild(grid)
+                    })
+            }
+        })
+    await db.collection("lunch")
+        .get()
+        .then(async function (querySnapshot) {
+            querySnapshot.forEach(function (doc) {
+                // doc.data() is never undefined for query doc snapshots
+                lmenu.push(doc.data())
+
+            })
+            var thesection = document.createElement("div")
+            thesection.id = "lunchform"
+            thesection.classList.add("menuform")
+
+            document.querySelector("#updateform").appendChild(thesection)
+            for (lcount = 0; lcount < lmenu.length; lcount++) {
+                var storage = firebase.storage();
+                await storageRef
+                    .child("backgrounds/" + lmenu[lcount].background)
+                    .getDownloadURL()
+                    .then(function (url) {
+                        var grid = document.createElement("div")
+                        grid.id = "lunch" + lcount
+                        grid.style.display = "grid"
+                        grid.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr"
+                        grid.style.gridTemplateRows = "1fr"
+                        grid.style.gridTemplateAreas = '"' + "name desc price update delete" + '"'
+                        grid.name = "lunch"
+
+                        var name = document.createElement("div")
+                        name.classList.add("name")
+                        name.innerText = lmenu[lcount].name
+
+                        var desc = document.createElement("input")
+                        desc.classList.add("desc")
+                        desc.value = lmenu[lcount].description
+
+                        var price = document.createElement("input")
+                        price.classList.add("price")
+                        price.value = lmenu[lcount].price
+
+                        var update = document.createElement("button")
+                        update.classList.add("update")
+                        update.innerText = "update"
+                        update.setAttribute("onclick", "update(this)");
+
+                        var delet = document.createElement("button")
+                        delet.classList.add("delete")
+                        delet.innerText = "delete"
+                        delet.setAttribute("onclick", "delet(this)");
+                        delet.name = lmenu[lcount].background
+
+                        grid.appendChild(name)
+                        grid.appendChild(desc)
+                        grid.appendChild(price)
+                        grid.appendChild(update)
+                        grid.appendChild(delet)
+
+                        document.querySelector("#lunchform").appendChild(grid)
+                    })
+            }
+        })
+
+    await db.collection("children")
+        .get()
+        .then(async function (querySnapshot) {
+            querySnapshot.forEach(function (doc) {
+                // doc.data() is never undefined for query doc snapshots
+                cmenu.push(doc.data())
+
+            })
+            var thesection = document.createElement("div")
+            thesection.id = "childrenform"
+            thesection.classList.add("menuform")
+
+            document.querySelector("#updateform").appendChild(thesection)
+            for (ccount = 0; ccount < cmenu.length; ccount++) {
+                var storage = firebase.storage();
+                await storageRef
+                    .child("backgrounds/" + cmenu[ccount].background)
+                    .getDownloadURL()
+                    .then(function (url) {
+                        var grid = document.createElement("div")
+                        grid.classList.add("menusub")
+                        grid.id = "children" + bcount
+                        grid.style.display = "grid"
+                        grid.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr"
+                        grid.style.gridTemplateRows = "1fr"
+                        grid.style.gridTemplateAreas = '"' + "name desc price update delete" + '"'
+                        grid.name = "children"
+
+                        var name = document.createElement("div")
+                        name.classList.add("name")
+                        name.innerText = cmenu[ccount].name
+
+                        var desc = document.createElement("input")
+                        desc.classList.add("desc")
+                        desc.value = cmenu[ccount].description
+
+                        var price = document.createElement("input")
+                        price.classList.add("price")
+                        price.value = cmenu[ccount].price
+
+                        var update = document.createElement("button")
+                        update.classList.add("update")
+                        update.innerText = "update"
+                        update.setAttribute("onclick", "update(this)");
+
+                        var delet = document.createElement("button")
+                        delet.classList.add("delete")
+                        delet.innerText = "delete"
+                        delet.setAttribute("onclick", "delet(this)");
+                        delet.name = cmenu[ccount].background
+
+                        grid.appendChild(name)
+                        grid.appendChild(desc)
+                        grid.appendChild(price)
+                        grid.appendChild(update)
+                        grid.appendChild(delet)
+
+                        document.querySelector("#childrenform").appendChild(grid)
+                    })
+            }
+        })
+    await db.collection("dessert")
+        .get()
+        .then(async function (querySnapshot) {
+            querySnapshot.forEach(function (doc) {
+                // doc.data() is never undefined for query doc snapshots
+                demenu.push(doc.data())
+
+            })
+            var thesection = document.createElement("div")
+            thesection.id = "dessertform"
+            thesection.classList.add("menuform")
+
+            document.querySelector("#updateform").appendChild(thesection)
+            for (decount = 0; decount < demenu.length; decount++) {
+                var storage = firebase.storage();
+                await storageRef
+                    .child("backgrounds/" + demenu[decount].background)
+                    .getDownloadURL()
+                    .then(function (url) {
+                        var grid = document.createElement("div")
+                        grid.classList.add("menusub")
+                        grid.id = "dessert" + decount
+                        grid.style.display = "grid"
+                        grid.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr"
+                        grid.style.gridTemplateRows = "1fr"
+                        grid.style.gridTemplateAreas = '"' + "name desc price update delete" + '"'
+                        grid.name = "dessert"
+
+                        var name = document.createElement("div")
+                        name.classList.add("name")
+                        name.innerText = demenu[decount].name
+
+                        var desc = document.createElement("input")
+                        desc.classList.add("desc")
+                        desc.value = demenu[decount].description
+
+                        var price = document.createElement("input")
+                        price.classList.add("price")
+                        price.value = demenu[decount].price
+
+                        var update = document.createElement("button")
+                        update.classList.add("update")
+                        update.innerText = "update"
+                        update.setAttribute("onclick", "update(this)");
+
+                        var delet = document.createElement("button")
+                        delet.classList.add("delete")
+                        delet.innerText = "delete"
+                        delet.setAttribute("onclick", "delet(this)");
+                        delet.name = demenu[decount].background
+
+                        grid.appendChild(name)
+                        grid.appendChild(desc)
+                        grid.appendChild(price)
+                        grid.appendChild(update)
+                        grid.appendChild(delet)
+
+                        document.querySelector("#dessertform").appendChild(grid)
+                    })
+            }
+        })
+    await db.collection("drinks")
+        .get()
+        .then(async function (querySnapshot) {
+            querySnapshot.forEach(function (doc) {
+                // doc.data() is never undefined for query doc snapshots
+                drmenu.push(doc.data())
+
+            })
+            var thesection = document.createElement("div")
+            thesection.id = "drinksform"
+            thesection.classList.add("menuform")
+
+            document.querySelector("#updateform").appendChild(thesection)
+            for (drcount = 0; drcount < drmenu.length; drcount++) {
+                var storage = firebase.storage();
+                await storageRef
+                    .child("backgrounds/" + drmenu[drcount].background)
+                    .getDownloadURL()
+                    .then(function (url) {
+                        var grid = document.createElement("div")
+                        grid.classList.add("menusub")
+                        grid.id = "drinks" + decount
+                        grid.style.display = "grid"
+                        grid.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr"
+                        grid.style.gridTemplateRows = "1fr"
+                        grid.style.gridTemplateAreas = '"' + "name desc price update delete" + '"'
+                        grid.name = "drinks"
+
+                        var name = document.createElement("div")
+                        name.classList.add("name")
+                        name.innerText = drmenu[drcount].name
+
+                        var desc = document.createElement("input")
+                        desc.classList.add("desc")
+                        desc.value = drmenu[drcount].description
+
+                        var price = document.createElement("input")
+                        price.classList.add("price")
+                        price.value = drmenu[drcount].price
+
+                        var update = document.createElement("button")
+                        update.classList.add("update")
+                        update.innerText = "update"
+                        update.setAttribute("onclick", "update(this)");
+
+                        var delet = document.createElement("button")
+                        delet.classList.add("delete")
+                        delet.innerText = "delete"
+                        delet.setAttribute("onclick", "delet(this)");
+                        delet.name = drmenu[drcount].background
+
+                        grid.appendChild(name)
+                        grid.appendChild(desc)
+                        grid.appendChild(price)
+                        grid.appendChild(update)
+                        grid.appendChild(delet)
+
+                        document.querySelector("#drinksform").appendChild(grid)
+                    })
+            }
+        })
+
+})
+
+function update(e) {
+    db.collection(e.parentNode.name).doc(e.parentNode.querySelector(".name").innerText)
+        .update({
+            description: e.parentNode.querySelector(".desc").value,
+            price: e.parentNode.querySelector(".price").value
+        })
+}
+
+function delet(e) {
+    db.collection(e.parentNode.name).doc(e.parentNode.querySelector(".name").innerText).delete()
+    storageRef.child("backgrounds/" + e.name).delete()
+    e.parentNode.display = "none"
 }
