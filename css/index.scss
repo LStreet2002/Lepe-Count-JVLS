@@ -8,13 +8,14 @@ overflow-x: hidden;
 }
 .nav {
     display:grid;
-    background-color:#ffffff;
+    background-color:#1A2050;
     grid-template-rows:4fr;
     grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:
     "logo what look map vol info";
     height:7vw;
     width:100vw;
+ 
 }
 a {
     text-decoration: none;
@@ -23,40 +24,49 @@ a {
 text-align:center;
 font-size:1.5vw;
 color:white;
-margin-top:2.5vw;
 }
 .logoh {
     grid-area:logo;
 }
-.logo {
- 
-    height:5vw;
-    width:12.6vw;
-    margin-left:1vw;
-    margin-top:1vw;
-}
-.what {
-    grid-area:what;
-    height:7w;
-    
-}
-.look {
-    grid-area:look;
-    height:7w;
-}
-.map {
-    grid-area:map;
-    height:7w;
-}
-.vol {
-    grid-area:vol;
-    height:7w;
-}
-.info {
-    grid-area:info;
-    text-align: center;
-    height:7w;
-}
+.navtext {
+    text-align:center;
+    font-size:1.5vw;
+    color:white;
+    margin-top:2.5vw;
+    }
+    .logoh {
+        grid-area:logo;
+    }
+    .logo {
+     
+        height:5vw;
+        width:12.6vw;
+        margin-left:1vw;
+        margin-top:1vw;
+    }
+    .what {
+        grid-area:what;
+        height:7w;
+        
+    }
+    .look {
+        grid-area:look;
+        height:7w;
+        
+    }
+    .map {
+        grid-area:map;
+        height:7w;
+    }
+    .vol {
+        grid-area:vol;
+        height:7w;
+    }
+    .info {
+        grid-area:info;
+        text-align: center;
+        height:7w;
+    }
 #coverimg {
     height:38.7vw;
     overflow-y:hidden;

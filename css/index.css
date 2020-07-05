@@ -10,7 +10,7 @@ body {
 .nav {
   display: -ms-grid;
   display: grid;
-  background-color: #ffffff;
+  background-color: #1A2050;
   -ms-grid-rows: 4fr;
       grid-template-rows: 4fr;
   -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -22,6 +22,18 @@ body {
 
 a {
   text-decoration: none;
+}
+
+.navtext {
+  text-align: center;
+  font-size: 1.5vw;
+  color: white;
+}
+
+.logoh {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: logo;
 }
 
 .navtext {
