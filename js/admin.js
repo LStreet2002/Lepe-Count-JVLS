@@ -1,21 +1,28 @@
-(function () {
-    const loginHolder = document.querySelector("#login-holder");
-    loginHolder.addEventListener("submit", (e) => {
-        e.preventDefault(); //enter button
+firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE)
+    .then(function () {
+        (function () {
+            const loginHolder = document.querySelector("#login-holder");
+            loginHolder.addEventListener("submit", (e) => {
+                e.preventDefault(); //enter button
 
 
-        const email = loginHolder["login-email"].value;
-        const password = loginHolder["login-password"].value;
+                const email = loginHolder["login-email"].value;
+                const password = loginHolder["login-password"].value;
 
-        // firebase login
-        auth.signInWithEmailAndPassword(email, password).then((cred) => {
-            document.querySelector("#loginpage").style.display = "none";
-            document.querySelector("#changepage").style.display = "block";
-        }).catch(error =>
-            console.log("nothing"))
-
+                // firebase login
+                auth.signInWithEmailAndPassword(email, password).then((cred) => {
+                    document.querySelector("#loginpage").style.display = "none";
+                    document.querySelector("#changepage").style.display = "block";
+                })
+            })
+        })();
     })
-})();
+    .catch(function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+    });
+
 
 var uploader = document.getElementById("uploader");
 var chooser = document.getElementById("chooser");
@@ -37,33 +44,41 @@ chooser.addEventListener("change", function (e) {
 });
 
 function vals() {
-    db.collection(document.getElementsByName("choiced")[0].attributes[1].nodeValue).doc(document.querySelector("#nameform").value)
-        .set({
-            name: document.querySelector("#nameform").value,
-            background: file.name,
-            description: document.querySelector("#dessform").value,
-            price: document.querySelector("#priceform").value
-        })
-        .then(function (docRef) {
-            var storageRef = firebase.storage().ref("backgrounds/" + file.name);
-            // Upload file
-            var task = storageRef.put(file);;
+    var user = firebase.auth().currentUser;
+    if (user) {
 
-            document.querySelector("#priceform").value = ""
-            document.querySelector("#dessform").value = ""
-            document.querySelector("#nameform").value = ""
-            output.style.backgroundImage = "url(/pic/placeholder.jpeg)"
-            document.querySelector("#breakfast").style.backgroundColor = "#00073D"
-            document.querySelector("#lunch").style.backgroundColor = "#00073D"
-            document.querySelector("#children").style.backgroundColor = "#00073D"
-            document.querySelector("#drinks").style.backgroundColor = "#00073D"
-            document.querySelector("#dessert").style.backgroundColor = "#00073D"
-            document.querySelector("#breakfast").name = ""
-            document.querySelector("#lunch").name = ""
-            document.querySelector("#children").name = ""
-            document.querySelector("#drinks").name = ""
-            document.querySelector("#dessert").name = ""
-        })
+        db.collection(document.getElementsByName("choiced")[0].attributes[1].nodeValue).doc(document.querySelector("#nameform").value)
+            .set({
+                name: document.querySelector("#nameform").value,
+                background: file.name,
+                description: document.querySelector("#dessform").value,
+                price: document.querySelector("#priceform").value
+            })
+            .then(function (docRef) {
+                var storageRef = firebase.storage().ref("backgrounds/" + file.name);
+                // Upload file
+                var task = storageRef.put(file);;
+
+                document.querySelector("#priceform").value = ""
+                document.querySelector("#dessform").value = ""
+                document.querySelector("#nameform").value = ""
+                output.style.backgroundImage = "url(/pic/placeholder.jpeg)"
+                document.querySelector("#breakfast").style.backgroundColor = "#00073D"
+                document.querySelector("#lunch").style.backgroundColor = "#00073D"
+                document.querySelector("#children").style.backgroundColor = "#00073D"
+                document.querySelector("#drinks").style.backgroundColor = "#00073D"
+                document.querySelector("#dessert").style.backgroundColor = "#00073D"
+                document.querySelector("#breakfast").name = ""
+                document.querySelector("#lunch").name = ""
+                document.querySelector("#children").name = ""
+                document.querySelector("#drinks").name = ""
+                document.querySelector("#dessert").name = ""
+            })
+    }
+    else {
+        document.querySelector("#loginpage").style.display = "block";
+        document.querySelector("#changepage").style.display = "none";
+    }
 }
 function choosecl() {
     document.getElementById("chooser").click(); // Click on the checkbox
@@ -172,7 +187,7 @@ window.addEventListener("DOMContentLoaded", async function updates() {
                         grid.classList.add("menusub")
                         grid.id = "breakfast" + bcount
                         grid.style.display = "grid"
-                        grid.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr 1fr"
+                        grid.style.gridTemplateColumns = "2.5fr 2.5fr 0.7fr 1.5fr 1fr 1fr"
                         grid.style.gridTemplateRows = "1fr"
                         grid.style.gridTemplateAreas = '"' + "name desc price image update delete" + '"'
                         grid.name = "breakfast"
@@ -204,12 +219,12 @@ window.addEventListener("DOMContentLoaded", async function updates() {
 
                         var update = document.createElement("button")
                         update.classList.add("update")
-                        update.innerText = "update"
+                        update.innerText = "UPDATE"
                         update.setAttribute("onclick", "update(this)");
 
                         var delet = document.createElement("button")
                         delet.classList.add("delete")
-                        delet.innerText = "delete"
+                        delet.innerText = "DELETE"
                         delet.setAttribute("onclick", "delet(this)");
                         delet.setAttribute("label", bmenu[bcount].background);
 
@@ -257,7 +272,7 @@ window.addEventListener("DOMContentLoaded", async function updates() {
                         grid.classList.add("menusub")
                         grid.id = "lunch" + lcount
                         grid.style.display = "grid"
-                        grid.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr 1fr"
+                        grid.style.gridTemplateColumns = "2.5fr 2.5fr 0.7fr 1.5fr 1fr 1fr"
                         grid.style.gridTemplateRows = "1fr"
                         grid.style.gridTemplateAreas = '"' + "name desc price image update delete" + '"'
                         grid.name = "lunch"
@@ -289,12 +304,12 @@ window.addEventListener("DOMContentLoaded", async function updates() {
 
                         var update = document.createElement("button")
                         update.classList.add("update")
-                        update.innerText = "update"
+                        update.innerText = "UPDATE"
                         update.setAttribute("onclick", "update(this)");
 
                         var delet = document.createElement("button")
                         delet.classList.add("delete")
-                        delet.innerText = "delete"
+                        delet.innerText = "DELETE"
                         delet.setAttribute("onclick", "delet(this)");
                         delet.setAttribute("label", lmenu[lcount].background);
 
@@ -342,7 +357,7 @@ window.addEventListener("DOMContentLoaded", async function updates() {
                         grid.classList.add("menusub")
                         grid.id = "children" + ccount
                         grid.style.display = "grid"
-                        grid.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr 1fr"
+                        grid.style.gridTemplateColumns = "2.5fr 2.5fr 0.7fr 1.5fr 1fr 1fr"
                         grid.style.gridTemplateRows = "1fr"
                         grid.style.gridTemplateAreas = '"' + "name desc price image update delete" + '"'
                         grid.name = "children"
@@ -374,12 +389,12 @@ window.addEventListener("DOMContentLoaded", async function updates() {
 
                         var update = document.createElement("button")
                         update.classList.add("update")
-                        update.innerText = "update"
+                        update.innerText = "UPDATE"
                         update.setAttribute("onclick", "update(this)");
 
                         var delet = document.createElement("button")
                         delet.classList.add("delete")
-                        delet.innerText = "delete"
+                        delet.innerText = "DELETE"
                         delet.setAttribute("onclick", "delet(this)");
                         delet.setAttribute("label", cmenu[ccount].background);
 
@@ -426,7 +441,7 @@ window.addEventListener("DOMContentLoaded", async function updates() {
                         grid.classList.add("menusub")
                         grid.id = "dessert" + decount
                         grid.style.display = "grid"
-                        grid.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr 1fr"
+                        grid.style.gridTemplateColumns = "2.5fr 2.5fr 0.7fr 1.5fr 1fr 1fr"
                         grid.style.gridTemplateRows = "1fr"
                         grid.style.gridTemplateAreas = '"' + "name desc price image update delete" + '"'
                         grid.name = "dessert"
@@ -458,12 +473,12 @@ window.addEventListener("DOMContentLoaded", async function updates() {
 
                         var update = document.createElement("button")
                         update.classList.add("update")
-                        update.innerText = "update"
+                        update.innerText = "UPDATE"
                         update.setAttribute("onclick", "update(this)");
 
                         var delet = document.createElement("button")
                         delet.classList.add("delete")
-                        delet.innerText = "delete"
+                        delet.innerText = "DELETE"
                         delet.setAttribute("onclick", "delet(this)");
                         delet.setAttribute("label", demenu[decount].background);
 
@@ -510,7 +525,7 @@ window.addEventListener("DOMContentLoaded", async function updates() {
                         grid.classList.add("menusub")
                         grid.id = "drinks" + decount
                         grid.style.display = "grid"
-                        grid.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr 1fr"
+                        grid.style.gridTemplateColumns = "2.5fr 2.5fr 0.7fr 1.5fr 1fr 1fr"
                         grid.style.gridTemplateRows = "1fr"
                         grid.style.gridTemplateAreas = '"' + "name desc price image update delete" + '"'
                         grid.name = "drinks"
@@ -542,12 +557,12 @@ window.addEventListener("DOMContentLoaded", async function updates() {
 
                         var update = document.createElement("button")
                         update.classList.add("update")
-                        update.innerText = "update"
+                        update.innerText = "UPDATE"
                         update.setAttribute("onclick", "update(this)");
 
                         var delet = document.createElement("button")
                         delet.classList.add("delete")
-                        delet.innerText = "delete"
+                        delet.innerText = "DELETE"
                         delet.setAttribute("onclick", "delet(this)");
                         delet.setAttribute("label", drmenu[drcount].background);
 
@@ -568,50 +583,83 @@ window.addEventListener("DOMContentLoaded", async function updates() {
         })
 
 })
+
+
 function quest(x) {
 
     var choicer = x.parentNode.querySelector(".unknown")
-    choicer.click()
+    var user = firebase.auth().currentUser;
+
+    if (user) {
+        choicer.click()
+    }
+    else {
+        document.querySelector("#loginpage").style.display = "block";
+        document.querySelector("#changepage").style.display = "none";
+    }
     choicer.addEventListener("change", function (e) {
+
+
+        // User is signed in.
         // Get file
         file = e.target.files[0];
 
         x.setAttribute("label", file.name)
         x.innerText = file.name
-    })
+
+    });
+
+
+
 }
 function update(e) {
+    var user = firebase.auth().currentUser;
+    if (user) {
 
-    if (e.parentNode.querySelector(".delete").getAttribute("label") == e.parentNode.querySelector(".upimg").getAttribute("label")) {
 
-        db.collection(e.parentNode.name).doc(e.parentNode.querySelector(".name").innerText)
-            .update({
-                description: e.parentNode.querySelector(".desc").value,
-                price: e.parentNode.querySelector(".price").value
-            })
+        if (e.parentNode.querySelector(".delete").getAttribute("label") == e.parentNode.querySelector(".upimg").getAttribute("label")) {
+
+            db.collection(e.parentNode.name).doc(e.parentNode.querySelector(".name").innerText)
+                .update({
+                    description: e.parentNode.querySelector(".desc").value,
+                    price: e.parentNode.querySelector(".price").value
+                })
+        }
+        else {
+
+            db.collection(e.parentNode.name).doc(e.parentNode.querySelector(".name").innerText)
+                .update({
+                    description: e.parentNode.querySelector(".desc").value,
+                    price: e.parentNode.querySelector(".price").value,
+                    background: e.parentNode.querySelector(".upimg").getAttribute("label")
+                })
+            storageRef.child("backgrounds/" + e.parentNode.querySelector(".delete").getAttribute("label")).delete()
+
+            var filt = e.parentNode.querySelector(".unknown").files[0]
+
+            var storagechange = firebase.storage().ref("backgrounds/" + filt.name);
+            // Upload file
+            var task = storagechange.put(filt);
+
+        }
     }
     else {
-
-        db.collection(e.parentNode.name).doc(e.parentNode.querySelector(".name").innerText)
-            .update({
-                description: e.parentNode.querySelector(".desc").value,
-                price: e.parentNode.querySelector(".price").value,
-                background: e.parentNode.querySelector(".upimg").getAttribute("label")
-            })
-        storageRef.child("backgrounds/" + e.parentNode.querySelector(".delete").getAttribute("label")).delete()
-
-        var filt = e.parentNode.querySelector(".unknown").files[0]
-
-        var storagechange = firebase.storage().ref("backgrounds/" + filt.name);
-        // Upload file
-        var task = storagechange.put(filt);
-
+        document.querySelector("#loginpage").style.display = "block";
+        document.querySelector("#changepage").style.display = "none";
     }
 }
 
 function delet(e) {
-    db.collection(e.parentNode.name).doc(e.parentNode.querySelector(".name").innerText).delete()
-    storageRef.child("backgrounds/" + e.value).delete()
-    e.parentNode.display = "none"
+    var user = firebase.auth().currentUser;
+    if (user) {
+
+        db.collection(e.parentNode.name).doc(e.parentNode.querySelector(".name").innerText).delete()
+        storageRef.child("backgrounds/" + e.value).delete()
+        e.parentNode.display = "none"
+    }
+    else {
+        document.querySelector("#loginpage").style.display = "block";
+        document.querySelector("#changepage").style.display = "none";
+    }
 }
 

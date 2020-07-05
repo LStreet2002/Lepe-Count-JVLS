@@ -196,25 +196,58 @@ a {
 
 .name {
     grid-area:name;
+    font-size:1.8vw;
 }
 .desc {
     grid-area:desc;
+    border:none;
+    border-bottom:0.2vw solid #4054c9;
+    font-family: 'Oxygen', sans-serif;
+    margin-right:1vw;
+    font-size:1.8vw;
 }
 .price {
     grid-area:price;
+    border:none;
+    border-bottom:0.3vw solid #ffff2b;
+    font-family: 'Oxygen', sans-serif;
+    margin-right:1vw;
+    font-size:1.8vw;
+
 }
+:focus {
+    outline:none;
+}
+
 .update {
     grid-area:update;
+    border:none;
+    background-color:#7af05d;
+    color:white;
+    font-size:1.4vw;
 }
 .delete {
     grid-area:delete;
+    background-color: red;
+    border:none;
+    color: white;
+    font-size:1.4vw;
 }
 .menuform {
-    margin-top:3vw
+    margin-top:3vw;
 }
 .menusub {
 margin-top:1vw;
+width:100vw;
 }
 .upimg {
     grid-area:image;
+    text-align:center;
+    background-color:#04B8D0;
+    color:white;
+    font-size:1.4vw;
+    align-self: center;
+    font-size: 1.4vw;
+    padding-top: 0.7vw;
+    padding-bottom: 0.7vw;
 }
