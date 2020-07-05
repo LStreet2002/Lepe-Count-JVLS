@@ -53,6 +53,16 @@ function vals() {
             document.querySelector("#dessform").value = ""
             document.querySelector("#nameform").value = ""
             output.style.backgroundImage = "url(/pic/placeholder.jpeg)"
+            document.querySelector("#breakfast").style.backgroundColor = "#00073D"
+            document.querySelector("#lunch").style.backgroundColor = "#00073D"
+            document.querySelector("#children").style.backgroundColor = "#00073D"
+            document.querySelector("#drinks").style.backgroundColor = "#00073D"
+            document.querySelector("#dessert").style.backgroundColor = "#00073D"
+            document.querySelector("#breakfast").name = ""
+            document.querySelector("#lunch").name = ""
+            document.querySelector("#children").name = ""
+            document.querySelector("#drinks").name = ""
+            document.querySelector("#dessert").name = ""
         })
 }
 function choosecl() {
@@ -146,6 +156,11 @@ window.addEventListener("DOMContentLoaded", async function updates() {
             thesection.id = "breakfastform"
             thesection.classList.add("menuform")
 
+            var sectiont = document.createElement("h2")
+            sectiont.innerText = "Breakfast"
+
+            thesection.appendChild(sectiont)
+
             document.querySelector("#updateform").appendChild(thesection)
             for (bcount = 0; bcount < bmenu.length; bcount++) {
                 var storage = firebase.storage();
@@ -157,9 +172,9 @@ window.addEventListener("DOMContentLoaded", async function updates() {
                         grid.classList.add("menusub")
                         grid.id = "breakfast" + bcount
                         grid.style.display = "grid"
-                        grid.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr"
+                        grid.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr 1fr"
                         grid.style.gridTemplateRows = "1fr"
-                        grid.style.gridTemplateAreas = '"' + "name desc price update delete" + '"'
+                        grid.style.gridTemplateAreas = '"' + "name desc price image update delete" + '"'
                         grid.name = "breakfast"
 
                         var name = document.createElement("div")
@@ -169,6 +184,19 @@ window.addEventListener("DOMContentLoaded", async function updates() {
                         var desc = document.createElement("input")
                         desc.classList.add("desc")
                         desc.value = bmenu[bcount].description
+
+                        var image = document.createElement("input")
+                        image.classList.add("unknown")
+                        image.style.display = "none"
+                        image.type = "file"
+                        image.accept = ".png,.jpg,.gif,.tif,.webp"
+
+
+                        var fake = document.createElement("div")
+                        fake.innerHTML = bmenu[bcount].background
+                        fake.classList.add("upimg")
+                        fake.setAttribute("onclick", "quest(this)");
+                        fake.setAttribute("label", bmenu[bcount].background);
 
                         var price = document.createElement("input")
                         price.classList.add("price")
@@ -183,18 +211,24 @@ window.addEventListener("DOMContentLoaded", async function updates() {
                         delet.classList.add("delete")
                         delet.innerText = "delete"
                         delet.setAttribute("onclick", "delet(this)");
-                        delet.name = bmenu[bcount].background
+                        delet.setAttribute("label", bmenu[bcount].background);
 
                         grid.appendChild(name)
                         grid.appendChild(desc)
                         grid.appendChild(price)
                         grid.appendChild(update)
                         grid.appendChild(delet)
+                        grid.appendChild(image)
+                        grid.appendChild(fake)
 
                         document.querySelector("#breakfastform").appendChild(grid)
                     })
+
+
+
             }
         })
+
     await db.collection("lunch")
         .get()
         .then(async function (querySnapshot) {
@@ -207,6 +241,11 @@ window.addEventListener("DOMContentLoaded", async function updates() {
             thesection.id = "lunchform"
             thesection.classList.add("menuform")
 
+            var sectiont = document.createElement("h2")
+            sectiont.innerText = "Lunch"
+
+            thesection.appendChild(sectiont)
+
             document.querySelector("#updateform").appendChild(thesection)
             for (lcount = 0; lcount < lmenu.length; lcount++) {
                 var storage = firebase.storage();
@@ -215,11 +254,12 @@ window.addEventListener("DOMContentLoaded", async function updates() {
                     .getDownloadURL()
                     .then(function (url) {
                         var grid = document.createElement("div")
+                        grid.classList.add("menusub")
                         grid.id = "lunch" + lcount
                         grid.style.display = "grid"
-                        grid.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr"
+                        grid.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr 1fr"
                         grid.style.gridTemplateRows = "1fr"
-                        grid.style.gridTemplateAreas = '"' + "name desc price update delete" + '"'
+                        grid.style.gridTemplateAreas = '"' + "name desc price image update delete" + '"'
                         grid.name = "lunch"
 
                         var name = document.createElement("div")
@@ -229,6 +269,19 @@ window.addEventListener("DOMContentLoaded", async function updates() {
                         var desc = document.createElement("input")
                         desc.classList.add("desc")
                         desc.value = lmenu[lcount].description
+
+                        var image = document.createElement("input")
+                        image.classList.add("unknown")
+                        image.style.display = "none"
+                        image.type = "file"
+                        image.accept = ".png,.jpg,.gif,.tif,.webp"
+
+
+                        var fake = document.createElement("div")
+                        fake.innerHTML = lmenu[lcount].background
+                        fake.classList.add("upimg")
+                        fake.setAttribute("onclick", "quest(this)");
+                        fake.setAttribute("label", lmenu[lcount].background);
 
                         var price = document.createElement("input")
                         price.classList.add("price")
@@ -243,16 +296,21 @@ window.addEventListener("DOMContentLoaded", async function updates() {
                         delet.classList.add("delete")
                         delet.innerText = "delete"
                         delet.setAttribute("onclick", "delet(this)");
-                        delet.name = lmenu[lcount].background
+                        delet.setAttribute("label", lmenu[lcount].background);
 
                         grid.appendChild(name)
                         grid.appendChild(desc)
                         grid.appendChild(price)
                         grid.appendChild(update)
                         grid.appendChild(delet)
+                        grid.appendChild(image)
+                        grid.appendChild(fake)
 
                         document.querySelector("#lunchform").appendChild(grid)
                     })
+
+
+
             }
         })
 
@@ -268,6 +326,11 @@ window.addEventListener("DOMContentLoaded", async function updates() {
             thesection.id = "childrenform"
             thesection.classList.add("menuform")
 
+            var sectiont = document.createElement("h2")
+            sectiont.innerText = "Children"
+
+            thesection.appendChild(sectiont)
+
             document.querySelector("#updateform").appendChild(thesection)
             for (ccount = 0; ccount < cmenu.length; ccount++) {
                 var storage = firebase.storage();
@@ -277,11 +340,11 @@ window.addEventListener("DOMContentLoaded", async function updates() {
                     .then(function (url) {
                         var grid = document.createElement("div")
                         grid.classList.add("menusub")
-                        grid.id = "children" + bcount
+                        grid.id = "children" + ccount
                         grid.style.display = "grid"
-                        grid.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr"
+                        grid.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr 1fr"
                         grid.style.gridTemplateRows = "1fr"
-                        grid.style.gridTemplateAreas = '"' + "name desc price update delete" + '"'
+                        grid.style.gridTemplateAreas = '"' + "name desc price image update delete" + '"'
                         grid.name = "children"
 
                         var name = document.createElement("div")
@@ -291,6 +354,19 @@ window.addEventListener("DOMContentLoaded", async function updates() {
                         var desc = document.createElement("input")
                         desc.classList.add("desc")
                         desc.value = cmenu[ccount].description
+
+                        var image = document.createElement("input")
+                        image.classList.add("unknown")
+                        image.style.display = "none"
+                        image.type = "file"
+                        image.accept = ".png,.jpg,.gif,.tif,.webp"
+
+
+                        var fake = document.createElement("div")
+                        fake.innerHTML = cmenu[ccount].background
+                        fake.classList.add("upimg")
+                        fake.setAttribute("onclick", "quest(this)");
+                        fake.setAttribute("label", cmenu[ccount].background);
 
                         var price = document.createElement("input")
                         price.classList.add("price")
@@ -305,16 +381,21 @@ window.addEventListener("DOMContentLoaded", async function updates() {
                         delet.classList.add("delete")
                         delet.innerText = "delete"
                         delet.setAttribute("onclick", "delet(this)");
-                        delet.name = cmenu[ccount].background
+                        delet.setAttribute("label", cmenu[ccount].background);
 
                         grid.appendChild(name)
                         grid.appendChild(desc)
                         grid.appendChild(price)
                         grid.appendChild(update)
                         grid.appendChild(delet)
+                        grid.appendChild(image)
+                        grid.appendChild(fake)
 
                         document.querySelector("#childrenform").appendChild(grid)
                     })
+
+
+
             }
         })
     await db.collection("dessert")
@@ -329,6 +410,11 @@ window.addEventListener("DOMContentLoaded", async function updates() {
             thesection.id = "dessertform"
             thesection.classList.add("menuform")
 
+            var sectiont = document.createElement("h2")
+            sectiont.innerText = "Dessert"
+
+            thesection.appendChild(sectiont)
+
             document.querySelector("#updateform").appendChild(thesection)
             for (decount = 0; decount < demenu.length; decount++) {
                 var storage = firebase.storage();
@@ -340,9 +426,9 @@ window.addEventListener("DOMContentLoaded", async function updates() {
                         grid.classList.add("menusub")
                         grid.id = "dessert" + decount
                         grid.style.display = "grid"
-                        grid.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr"
+                        grid.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr 1fr"
                         grid.style.gridTemplateRows = "1fr"
-                        grid.style.gridTemplateAreas = '"' + "name desc price update delete" + '"'
+                        grid.style.gridTemplateAreas = '"' + "name desc price image update delete" + '"'
                         grid.name = "dessert"
 
                         var name = document.createElement("div")
@@ -352,6 +438,19 @@ window.addEventListener("DOMContentLoaded", async function updates() {
                         var desc = document.createElement("input")
                         desc.classList.add("desc")
                         desc.value = demenu[decount].description
+
+                        var image = document.createElement("input")
+                        image.classList.add("unknown")
+                        image.style.display = "none"
+                        image.type = "file"
+                        image.accept = ".png,.jpg,.gif,.tif,.webp"
+
+
+                        var fake = document.createElement("div")
+                        fake.innerHTML = demenu[decount].background
+                        fake.classList.add("upimg")
+                        fake.setAttribute("onclick", "quest(this)");
+                        fake.setAttribute("label", demenu[decount].background);
 
                         var price = document.createElement("input")
                         price.classList.add("price")
@@ -366,16 +465,21 @@ window.addEventListener("DOMContentLoaded", async function updates() {
                         delet.classList.add("delete")
                         delet.innerText = "delete"
                         delet.setAttribute("onclick", "delet(this)");
-                        delet.name = demenu[decount].background
+                        delet.setAttribute("label", demenu[decount].background);
 
                         grid.appendChild(name)
                         grid.appendChild(desc)
                         grid.appendChild(price)
                         grid.appendChild(update)
                         grid.appendChild(delet)
+                        grid.appendChild(image)
+                        grid.appendChild(fake)
 
                         document.querySelector("#dessertform").appendChild(grid)
                     })
+
+
+
             }
         })
     await db.collection("drinks")
@@ -390,6 +494,11 @@ window.addEventListener("DOMContentLoaded", async function updates() {
             thesection.id = "drinksform"
             thesection.classList.add("menuform")
 
+            var sectiont = document.createElement("h2")
+            sectiont.innerText = "Drinks"
+
+            thesection.appendChild(sectiont)
+
             document.querySelector("#updateform").appendChild(thesection)
             for (drcount = 0; drcount < drmenu.length; drcount++) {
                 var storage = firebase.storage();
@@ -401,9 +510,9 @@ window.addEventListener("DOMContentLoaded", async function updates() {
                         grid.classList.add("menusub")
                         grid.id = "drinks" + decount
                         grid.style.display = "grid"
-                        grid.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr"
+                        grid.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr 1fr"
                         grid.style.gridTemplateRows = "1fr"
-                        grid.style.gridTemplateAreas = '"' + "name desc price update delete" + '"'
+                        grid.style.gridTemplateAreas = '"' + "name desc price image update delete" + '"'
                         grid.name = "drinks"
 
                         var name = document.createElement("div")
@@ -413,6 +522,19 @@ window.addEventListener("DOMContentLoaded", async function updates() {
                         var desc = document.createElement("input")
                         desc.classList.add("desc")
                         desc.value = drmenu[drcount].description
+
+                        var image = document.createElement("input")
+                        image.classList.add("unknown")
+                        image.style.display = "none"
+                        image.type = "file"
+                        image.accept = ".png,.jpg,.gif,.tif,.webp"
+
+
+                        var fake = document.createElement("div")
+                        fake.innerHTML = drmenu[drcount].background
+                        fake.classList.add("upimg")
+                        fake.setAttribute("onclick", "quest(this)");
+                        fake.setAttribute("label", drmenu[drcount].background);
 
                         var price = document.createElement("input")
                         price.classList.add("price")
@@ -427,31 +549,69 @@ window.addEventListener("DOMContentLoaded", async function updates() {
                         delet.classList.add("delete")
                         delet.innerText = "delete"
                         delet.setAttribute("onclick", "delet(this)");
-                        delet.name = drmenu[drcount].background
+                        delet.setAttribute("label", drmenu[drcount].background);
 
                         grid.appendChild(name)
                         grid.appendChild(desc)
                         grid.appendChild(price)
                         grid.appendChild(update)
                         grid.appendChild(delet)
+                        grid.appendChild(image)
+                        grid.appendChild(fake)
 
                         document.querySelector("#drinksform").appendChild(grid)
                     })
+
+
+
             }
         })
 
 })
+function quest(x) {
 
+    var choicer = x.parentNode.querySelector(".unknown")
+    choicer.click()
+    choicer.addEventListener("change", function (e) {
+        // Get file
+        file = e.target.files[0];
+
+        x.setAttribute("label", file.name)
+        x.innerText = file.name
+    })
+}
 function update(e) {
-    db.collection(e.parentNode.name).doc(e.parentNode.querySelector(".name").innerText)
-        .update({
-            description: e.parentNode.querySelector(".desc").value,
-            price: e.parentNode.querySelector(".price").value
-        })
+
+    if (e.parentNode.querySelector(".delete").getAttribute("label") == e.parentNode.querySelector(".upimg").getAttribute("label")) {
+
+        db.collection(e.parentNode.name).doc(e.parentNode.querySelector(".name").innerText)
+            .update({
+                description: e.parentNode.querySelector(".desc").value,
+                price: e.parentNode.querySelector(".price").value
+            })
+    }
+    else {
+
+        db.collection(e.parentNode.name).doc(e.parentNode.querySelector(".name").innerText)
+            .update({
+                description: e.parentNode.querySelector(".desc").value,
+                price: e.parentNode.querySelector(".price").value,
+                background: e.parentNode.querySelector(".upimg").getAttribute("label")
+            })
+        storageRef.child("backgrounds/" + e.parentNode.querySelector(".delete").getAttribute("label")).delete()
+
+        var filt = e.parentNode.querySelector(".unknown").files[0]
+
+        var storagechange = firebase.storage().ref("backgrounds/" + filt.name);
+        // Upload file
+        var task = storagechange.put(filt);
+
+    }
 }
 
 function delet(e) {
     db.collection(e.parentNode.name).doc(e.parentNode.querySelector(".name").innerText).delete()
-    storageRef.child("backgrounds/" + e.name).delete()
+    storageRef.child("backgrounds/" + e.value).delete()
     e.parentNode.display = "none"
 }
+
