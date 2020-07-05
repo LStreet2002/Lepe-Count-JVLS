@@ -1,0 +1,184 @@
+body {
+    border: 0px;
+    width: 100vw;
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Oxygen', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  .nav {
+    display: -ms-grid;
+    display: grid;
+    background-color: #1A2050;
+    -ms-grid-rows: 4fr;
+        grid-template-rows: 4fr;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: "logo what look map vol info";
+    height: 7vw;
+    width: 100vw;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .navtext {
+    text-align: center;
+    font-size: 1.5vw;
+    color: white;
+  }
+  
+  .logoh {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: logo;
+  }
+  
+  .navtext {
+    text-align: center;
+    font-size: 1.5vw;
+    color: white;
+    margin-top: 2.5vw;
+  }
+  
+  .logoh {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: logo;
+  }
+  
+  .logo {
+    height: 5vw;
+    width: 12.6vw;
+    margin-left: 1vw;
+    margin-top: 1vw;
+  }
+  
+  .what {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: what;
+    height: 7w;
+  }
+  
+  .look {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: look;
+    height: 7w;
+  }
+  
+  .map {
+    -ms-grid-row: 1;
+    -ms-grid-column: 4;
+    grid-area: map;
+    height: 7w;
+  }
+  
+  .vol {
+    -ms-grid-row: 1;
+    -ms-grid-column: 5;
+    grid-area: vol;
+    height: 7w;
+    background-color: #00073D;
+  }
+  
+  .info {
+    -ms-grid-row: 1;
+    -ms-grid-column: 6;
+    grid-area: info;
+    height: 7w;
+  }
+  
+  .line {
+    height: 0.5vw;
+    width: 90vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    border-radius: 1vw;
+    background-color: #4FAF36;
+  }
+  .createProfileDiv {
+      margin-left: 5vw;
+      margin-right: 5vw;
+  }
+  .createProfileBox {
+    width: 40vw;
+    height: 10vh;  
+    background: #04B8D0;
+    border-radius: 10px;
+    margin: auto;
+  }
+  .createProfileTxt {
+    font-family: Oxygen;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+   
+    text-align: center;
+    
+    color: #FFFFFF;
+    
+  }
+.jobDiv {
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+.title {
+    font-family: Oxygen;
+font-style: normal;
+font-weight: normal;
+font-size: 40px;
+line-height: 51px;
+
+color: #000000;
+}
+.duration {
+    font-family: Oxygen;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 38px;
+
+color: #746F6F;
+}
+.info {
+    ont-family: Oxygen;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 38px;
+
+color: #000000;
+}
+.hours {
+font-family: Oxygen;
+font-style: bold;
+font-weight: normal;
+font-size: 30px;
+line-height: 38px;
+
+color: #000000;
+}
+.applyBox {
+width: 306px;
+height: 65px;
+
+
+background: #04B8D0;
+border-radius: 5px;
+}
+.applyTxt {
+font-family: Oxygen;
+font-style: normal;
+font-weight: normal;
+font-size: 40px;
+line-height: 51px;
+text-align: center;
+
+color: #FFFFFF;
+}
