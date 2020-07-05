@@ -13,7 +13,9 @@ firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE)
                 auth.signInWithEmailAndPassword(email, password).then((cred) => {
                     document.querySelector("#loginpage").style.display = "none";
                     document.querySelector("#changepage").style.display = "block";
-                })
+                }).catch(error => document.querySelector("#login").style.backgroundColor = "red",
+                    setTimeout(() => { document.querySelector("#login").style.backgroundColor = "#04B8D0" }, 1500)
+                );
             })
         })();
     })
@@ -186,10 +188,6 @@ window.addEventListener("DOMContentLoaded", async function updates() {
                         var grid = document.createElement("div")
                         grid.classList.add("menusub")
                         grid.id = "breakfast" + bcount
-                        grid.style.display = "grid"
-                        grid.style.gridTemplateColumns = "2.5fr 2.5fr 0.7fr 1.5fr 1fr 1fr"
-                        grid.style.gridTemplateRows = "1fr"
-                        grid.style.gridTemplateAreas = '"' + "name desc price image update delete" + '"'
                         grid.name = "breakfast"
 
                         var name = document.createElement("div")
@@ -271,10 +269,6 @@ window.addEventListener("DOMContentLoaded", async function updates() {
                         var grid = document.createElement("div")
                         grid.classList.add("menusub")
                         grid.id = "lunch" + lcount
-                        grid.style.display = "grid"
-                        grid.style.gridTemplateColumns = "2.5fr 2.5fr 0.7fr 1.5fr 1fr 1fr"
-                        grid.style.gridTemplateRows = "1fr"
-                        grid.style.gridTemplateAreas = '"' + "name desc price image update delete" + '"'
                         grid.name = "lunch"
 
                         var name = document.createElement("div")
@@ -356,10 +350,6 @@ window.addEventListener("DOMContentLoaded", async function updates() {
                         var grid = document.createElement("div")
                         grid.classList.add("menusub")
                         grid.id = "children" + ccount
-                        grid.style.display = "grid"
-                        grid.style.gridTemplateColumns = "2.5fr 2.5fr 0.7fr 1.5fr 1fr 1fr"
-                        grid.style.gridTemplateRows = "1fr"
-                        grid.style.gridTemplateAreas = '"' + "name desc price image update delete" + '"'
                         grid.name = "children"
 
                         var name = document.createElement("div")
@@ -440,10 +430,6 @@ window.addEventListener("DOMContentLoaded", async function updates() {
                         var grid = document.createElement("div")
                         grid.classList.add("menusub")
                         grid.id = "dessert" + decount
-                        grid.style.display = "grid"
-                        grid.style.gridTemplateColumns = "2.5fr 2.5fr 0.7fr 1.5fr 1fr 1fr"
-                        grid.style.gridTemplateRows = "1fr"
-                        grid.style.gridTemplateAreas = '"' + "name desc price image update delete" + '"'
                         grid.name = "dessert"
 
                         var name = document.createElement("div")
@@ -525,9 +511,6 @@ window.addEventListener("DOMContentLoaded", async function updates() {
                         grid.classList.add("menusub")
                         grid.id = "drinks" + decount
                         grid.style.display = "grid"
-                        grid.style.gridTemplateColumns = "2.5fr 2.5fr 0.7fr 1.5fr 1fr 1fr"
-                        grid.style.gridTemplateRows = "1fr"
-                        grid.style.gridTemplateAreas = '"' + "name desc price image update delete" + '"'
                         grid.name = "drinks"
 
                         var name = document.createElement("div")

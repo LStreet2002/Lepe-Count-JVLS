@@ -99,8 +99,8 @@ body {
 }
 
 #descform {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
   grid-area: desc;
   background: rgba(40, 40, 40, 0.44);
   padding-left: 5vw;
@@ -245,8 +245,8 @@ a {
 }
 
 .desc {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
   grid-area: desc;
   border: none;
   border-bottom: 0.2vw solid #4054c9;
@@ -256,6 +256,8 @@ a {
 }
 
 .price {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
   grid-area: price;
   border: none;
   border-bottom: 0.3vw solid #ffff2b;
@@ -269,6 +271,8 @@ a {
 }
 
 .update {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
   grid-area: update;
   border: none;
   background-color: #7af05d;
@@ -277,6 +281,8 @@ a {
 }
 
 .delete {
+  -ms-grid-row: 1;
+  -ms-grid-column: 6;
   grid-area: delete;
   background-color: red;
   border: none;
@@ -291,9 +297,18 @@ a {
 .menusub {
   margin-top: 1vw;
   width: 100vw;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2.5fr 2.5fr 0.7fr 1.5fr 1fr 1fr;
+      grid-template-columns: 2.5fr 2.5fr 0.7fr 1.5fr 1fr 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: "name desc price image update delete";
 }
 
 .upimg {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
   grid-area: image;
   text-align: center;
   background-color: #04B8D0;
@@ -305,5 +320,19 @@ a {
   font-size: 1.4vw;
   padding-top: 0.7vw;
   padding-bottom: 0.7vw;
+}
+
+@media only screen and (max-width: 600px) {
+  .menusub {
+    -ms-grid-columns: 2fr 2fr 2fr;
+        grid-template-columns: 2fr 2fr 2fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "name desc update" "image price delete";
+    margin-top: 3vw;
+  }
+  .name {
+    text-align: center;
+  }
 }
 /*# sourceMappingURL=admin.css.map */

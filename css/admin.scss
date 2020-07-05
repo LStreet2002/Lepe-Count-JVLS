@@ -239,6 +239,11 @@ a {
 .menusub {
 margin-top:1vw;
 width:100vw;
+display:grid;
+grid-template-columns: 2.5fr 2.5fr 0.7fr 1.5fr 1fr 1fr;
+grid-template-rows : 1fr;
+grid-template-areas : 
+"name desc price image update delete";
 }
 .upimg {
     grid-area:image;
@@ -250,4 +255,17 @@ width:100vw;
     font-size: 1.4vw;
     padding-top: 0.7vw;
     padding-bottom: 0.7vw;
+}
+@media only screen and (max-width: 600px) {
+    .menusub {
+        grid-template-columns:2fr 2fr 2fr;
+        grid-template-rows:1fr 1fr;
+        grid-template-areas:
+        "name desc update"
+        "image price delete";
+        margin-top:3vw;
+    }
+    .name{
+        text-align:center;
+    }
 }
