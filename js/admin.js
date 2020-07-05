@@ -53,6 +53,16 @@ function vals() {
             document.querySelector("#dessform").value = ""
             document.querySelector("#nameform").value = ""
             output.style.backgroundImage = "url(/pic/placeholder.jpeg)"
+            document.querySelector("#breakfast").style.backgroundColor = "#00073D"
+            document.querySelector("#lunch").style.backgroundColor = "#00073D"
+            document.querySelector("#children").style.backgroundColor = "#00073D"
+            document.querySelector("#drinks").style.backgroundColor = "#00073D"
+            document.querySelector("#dessert").style.backgroundColor = "#00073D"
+            document.querySelector("#breakfast").name = ""
+            document.querySelector("#lunch").name = ""
+            document.querySelector("#children").name = ""
+            document.querySelector("#drinks").name = ""
+            document.querySelector("#dessert").name = ""
         })
 }
 function choosecl() {
