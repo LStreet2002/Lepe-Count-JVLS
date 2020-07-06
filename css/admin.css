@@ -208,6 +208,10 @@ a {
   width: 25vw;
 }
 
+#pseudo:hover {
+  cursor: pointer;
+}
+
 #sub {
   background-color: #4054c9;
   border: none;
@@ -226,13 +230,17 @@ a {
   margin-bottom: 2vw;
 }
 
+#sub:hover {
+  cursor: pointer;
+}
+
 .adminhead {
-  font-size: 2vw;
+  font-size: 2.4vw;
   margin-left: 2vw;
 }
 
 .admintext {
-  font-size: 1.3vw;
+  font-size: 1.7vw;
   margin-bottom: 3vw;
   margin-left: 2vw;
 }
@@ -280,6 +288,10 @@ a {
   font-size: 1.4vw;
 }
 
+.update:hover {
+  cursor: pointer;
+}
+
 .delete {
   -ms-grid-row: 1;
   -ms-grid-column: 6;
@@ -288,6 +300,10 @@ a {
   border: none;
   color: white;
   font-size: 1.4vw;
+}
+
+.delete:hover {
+  cursor: pointer;
 }
 
 .menuform {
@@ -320,6 +336,10 @@ a {
   font-size: 1.4vw;
   padding-top: 0.7vw;
   padding-bottom: 0.7vw;
+}
+
+.upimg:hover {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {

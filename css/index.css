@@ -489,5 +489,15 @@ a {
   body {
     overflow-y: scroll;
   }
+  .hovt {
+    font-size: 2.9vw;
+    text-align: center;
+    margin-top: 1vw;
+  }
+  .hovd {
+    margin-left: 1.5vw;
+    margin-right: 1vw;
+    font-size: 2.3vw;
+  }
 }
 /*# sourceMappingURL=index.css.map */
