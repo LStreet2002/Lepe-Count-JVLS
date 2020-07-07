@@ -7,6 +7,29 @@ body {
     overflow-x: hidden;
   }
   
+  /* width */
+::-webkit-scrollbar {
+  width: 10px;
+  background: rgba(0,0,0,0);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0);
+  display: none;
+  ; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.15);
+  border-radius:1.3vw;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,0,0,0.5); 
+}
   .nav {
     display: -ms-grid;
     display: grid;
