@@ -4,11 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/vouluntering.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/vouluntering.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <title>Document</title>
-
 </head>
 
 <body>
@@ -41,6 +39,29 @@
         </a>
 
     </div>
+    <nav class="z-depth-0 grey lighten-4">
+        <div class="nav-wrapper container">
+            <ul id="nav-mobile" class='right hide-on-med-and-down'>
+                <li class="logged-in" style="display: none;">
+                    <a href="#" class="grey-text modal-trigger" data-target="modal-account"> Account</a>
+                </li>
+                <li class="logged-in" style="display: none;">
+                    <a href="#" class="grey-text" id="logout">Logout</a>
+                </li>
+                <li class="logged-in" style="display: none;">
+                    <a href="#" class="grey-text modal-trigger" data-target="modal-create">Add Job</a>
+                </li>
+                <li class="logged-out" style="display: none;">
+                    <a href="#" class="grey-text modal-trigger" data-target="modal-login">Log in</a>
+                </li>
+                <li class="logged-out" style="display: none;">
+                    <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
     <div class="createProfileDiv">
         <p>With over a mile of beach, pine fringed cliffs, wildflower meadows, woods and historic D-Day remains, Lepe
             Country Park is the ideal place to relax and watch the world go by. <br> <br> A number of different
@@ -54,47 +75,124 @@
 
 
         </p>
-        <div class="createProfileBox">
-            <h1 class="createProfileTxt">Create Profile</h1>
-        </div>
+
     </div>
     <div class="line"></div>
     <div class="jobDiv">
-        <h1 class="title">Front of house</h1>
-        <h1 class="duration">Temporary</h1>
-        <p class="info">As front of house you will be the face of the site. As such you will need to enjoy holding
-            conversation, and be able to keep your composure in confrontation. You will also need to be able to perform
-            simple cleaning and sorting taks.</p>
-        <h1 class="hours">Monday and Tuesday 0900-1400</h1>
-        <div class="applyBox">
-            <h1 class="applyTxt">Apply</h1>
+
+    </div>
+
+
+
+
+    <div id="modal-signup" class="modal">
+        <div class="modal-content">
+            <h4>Create Profile</h4><br>
+            <form id="signup-form">
+                <div class="input-field">
+                    <input type="email" id="singup-email" required>
+                    <label for="signup-email">Email address</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" id="signup-password" required>
+                    <label for="signup-password">Choose password</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" id="signup-about" required>
+                    <label for="signup-about">One line about you</label>
+                </div>
+                <button class="btn light-blue z-depth-0">Sign up</button>
+            </form>
         </div>
     </div>
-    <div class="line"></div>
-    <div class="jobDiv">
-        <h1 class="title">Ranger</h1>
-        <h1 class="duration">Full-time</h1>
-        <p class="info">As front of house you will be the face of the site. As such you will need to enjoy holding
-            conversation, and be able to keep your composure in confrontation. You will also need to be able to perform
-            simple cleaning and sorting taks.</p>
-        <h1 class="hours">Monday and Tuesday 0900-1400</h1>
-        <div class="applyBox">
-            <h1 class="applyTxt">Apply</h1>
+
+    <div id="modal-login" class="modal">
+        <div class="modal-content">
+            <h4>Login</h4><br>
+            <form id="login-form">
+                <div class="input-field">
+                    <input type="email" id="login-email" required>
+                    <label for="login-email">Email address</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" id="login-password" required>
+                    <label for="login-password">Your password</label>
+                </div>
+                <button class="btn light-blue z-depth-0">Login</button>
+            </form>
         </div>
     </div>
-    <div class="line"></div>
-    <div class="jobDiv">
-        <h1 class="title">Front of house</h1>
-        <h1 class="duration">Temporary</h1>
-        <p class="info">As front of house you will be the face of the site. As such you will need to enjoy holding
-            conversation, and be able to keep your composure in confrontation. You will also need to be able to perform
-            simple cleaning and sorting taks.</p>
-        <h1 class="hours">Monday and Tuesday 0900-1400</h1>
-        <div class="applyBox">
-            <h1 class="applyTxt">Apply</h1>
+
+    <div id="modal-create" class="modal">
+        <div class="modal-content">
+            <h4>Create Job</h4><br>
+            <form id="create-form">
+                <div class="input-field">
+                    <input type="text" id="title" required>
+                    <label for="title">Job Title</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" id="duration" required>
+                    <label for="duration">Part Time/Full Time</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" id="info">
+                    <label for="info">About The Job</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" id="hours">
+                    <label for="hours"> Working Hours</label>
+                </div>
+                <button class="btn light-blue z-depth-0">Add</button>
+            </form>
         </div>
     </div>
-    <div class="line"></div>
+
+    <div id="modal-account" class="modal">
+        <div class="modal-content">
+            <h4>Account details</h4><br>
+            <div class="account-details"></div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyC3_rmgBx91btvvtXxlrrU5_4DPCscQbXY",
+            authDomain: "lepe-country-jvls.firebaseapp.com",
+            databaseURL: "https://lepe-country-jvls.firebaseio.com",
+            projectId: "lepe-country-jvls",
+            storageBucket: "lepe-country-jvls.appspot.com",
+            messagingSenderId: "9478023962",
+            appId: "1:9478023962:web:1f02d0814830a94cd2daa3",
+            measurementId: "G-SQG747JWC0"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+
+        //make auth and firestore refrences
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/voulunteer.js"></script>
+    <script src="js/voulunteerAuth.js"></script>
+
 </body>
 
 </html>
