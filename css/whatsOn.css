@@ -126,6 +126,15 @@ body {
     border-radius: 1vw;
     background-color: #4FAF36;
   }
+  .line2 {
+    height: 0.5vw;
+    width: 90vw;
+   
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    border-radius: 1vw;
+    background-color: #4FAF36;
+  }
   .eventDiv {
       display: flex;
       margin-left: 5vw;
@@ -134,14 +143,15 @@ body {
   }
   .eventTitle {
     margin: auto;
-    margin-right: 15vw;
-    white-space: nowrap;
+    margin-right: 10vw;
     font-family: Oxygen;
     font-style: normal;
     font-weight: normal;
     font-size: 35px;
     line-height: 44px;
     text-align: center;
+    max-width: 15vw;
+    min-width: 15vw;
     
     color: #000000;
   }
@@ -153,6 +163,7 @@ body {
     font-weight: normal;
     font-size: 25px;
     line-height: 39px;
+    min-width: 45vw;
     /* or 156% */
     
     
@@ -161,10 +172,10 @@ body {
   }
   .signUpBox {
     margin: auto;
+    margin-left: 5vw;
+    margin-right: 20vw;
     width: 40vw;
     height: 10vh;
-    
-    
     background: #04B8D0;
     border-radius: 5px;
     }
@@ -172,10 +183,30 @@ body {
     font-family: Oxygen;
     font-style: normal;
     font-weight: normal;
-    font-size: 25px;
-    line-height: 51px;
+    font-size: 20px;
+    margin: auto;
     text-align: center;
     
     
     color: #FFFFFF;
+    }
+    @media only screen and (max-width: 900px) {
+        .eventDiv {
+            display: unset;
+        }
+        .eventTitle {
+            margin-left: 5vw;
+            margin-bottom: 5vh;
+        }
+        .eventInfo {
+            margin-left: 5vw;
+            margin-right: 5vw;
+            margin-bottom: 5vh;
+            font-size: 20px;
+        }
+   
+    }
+    .events {
+      margin-left: 5vw;
+      margin-right: 5vw;
     }

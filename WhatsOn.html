@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="css/whatsOn.css">
     <title>Document</title>
 </head>
@@ -39,39 +40,137 @@
         </a>
 
     </div>
-    <div class="eventDiv">
-        <h1 class="eventTitle">Lepe Loop</h1>
-        <p class="eventInfo">This is a 5 mile coast and countryside circular walk around Lepe and Exbury. Dogs can also
-            be taken on the route which will take around 2 hours at a leisurely pace. During Winter the paths can be
-            boggy so wellingtons and sensible outdoor clothing are recommended. At high tide, there is an alternative
-            route following the lane.</p>
-        <div class="signUpBox">
-            <h1 class="signUpTxt">Apply</h1>
+    <nav class="z-depth-0 grey lighten-4">
+        <div class="nav-wrapper container">
+            <ul id="nav-mobile" class='right '>
+                <li class="logged-in" style="display: none;">
+                    <a href="#" class="grey-text modal-trigger" data-target="modal-account"> Account</a>
+                </li>
+                <li class="logged-in" style="display: none;">
+                    <a href="#" class="grey-text" id="logout">Logout</a>
+                </li>
+                <li class="logged-in" style="display: none;">
+                    <a href="#" class="grey-text modal-trigger" data-target="modal-create">Add Event</a>
+                </li>
+                <li class="logged-out" style="display: none;">
+                    <a href="#" class="grey-text modal-trigger" data-target="modal-login">Log in</a>
+                </li>
+                <li class="logged-out" style="display: none;">
+                    <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    <div class="events">
+
+    </div>
+
+
+
+
+    <div id="modal-create" class="modal">
+        <div class="modal-content">
+            <h4>Create Event</h4><br>
+            <form id="create-form">
+                <div class="input-field">
+                    <input type="text" id="title" required>
+                    <label for="title">Event title</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" id="info" required>
+                    <label for="duration">info</label>
+                </div>
+                <button class="btn light-blue z-depth-0">Add</button>
+            </form>
         </div>
     </div>
-    <div class="line"></div>
-    <div class="eventDiv">
-        <h1 class="eventTitle">Lepe Loop</h1>
-        <p class="eventInfo">This is a 5 mile coast and countryside circular walk around Lepe and Exbury. Dogs can also
-            be taken on the route which will take around 2 hours at a leisurely pace. During Winter the paths can be
-            boggy so wellingtons and sensible outdoor clothing are recommended. At high tide, there is an alternative
-            route following the lane.</p>
-        <div class="signUpBox">
-            <h1 class="signUpTxt">Apply</h1>
+
+
+    <div id="modal-login" class="modal">
+        <div class="modal-content">
+            <h4>Login</h4><br>
+            <form id="login-form">
+                <div class="input-field">
+                    <input type="email" id="login-email" required>
+                    <label for="login-email">Email address</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" id="login-password" required>
+                    <label for="login-password">Your password</label>
+                </div>
+                <button class="btn light-blue z-depth-0">Login</button>
+            </form>
         </div>
     </div>
-    <div class="line"></div>
-    <div class="eventDiv">
-        <h1 class="eventTitle">Lepe Loop</h1>
-        <p class="eventInfo">This is a 5 mile coast and countryside circular walk around Lepe and Exbury. Dogs can also
-            be taken on the route which will take around 2 hours at a leisurely pace. During Winter the paths can be
-            boggy so wellingtons and sensible outdoor clothing are recommended. At high tide, there is an alternative
-            route following the lane.</p>
-        <div class="signUpBox">
-            <h1 class="signUpTxt">Apply</h1>
+
+
+
+    <div id="modal-signup" class="modal">
+        <div class="modal-content">
+            <h4>Create Profile</h4><br>
+            <form id="signup-form">
+                <div class="input-field">
+                    <input type="email" id="singup-email" required>
+                    <label for="signup-email">Email address</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" id="signup-password" required>
+                    <label for="signup-password">Choose password</label>
+                </div>
+
+                <button class="btn light-blue z-depth-0">Sign up</button>
+            </form>
         </div>
     </div>
-    <div class="line"></div>
+
+
+
+    <div id="modal-account" class="modal">
+        <div class="modal-content">
+            <h4>Account details</h4><br>
+            <div class="account-details"></div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyC3_rmgBx91btvvtXxlrrU5_4DPCscQbXY",
+            authDomain: "lepe-country-jvls.firebaseapp.com",
+            databaseURL: "https://lepe-country-jvls.firebaseio.com",
+            projectId: "lepe-country-jvls",
+            storageBucket: "lepe-country-jvls.appspot.com",
+            messagingSenderId: "9478023962",
+            appId: "1:9478023962:web:1f02d0814830a94cd2daa3",
+            measurementId: "G-SQG747JWC0"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+
+        //make auth and firestore refrences
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="/js/whatsOn.js"></script>
+    <script src="js/whatsOnAuth.js"></script>
 </body>
 
 </html>

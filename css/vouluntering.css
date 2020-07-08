@@ -125,9 +125,24 @@ body {
     border-radius: 1vw;
     background-color: #4FAF36;
   }
+  .line2 {
+    height: 0.5vw;
+    width: 90vw;
+   
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    border-radius: 1vw;
+    background-color: #4FAF36;
+  }
   .createProfileDiv {
       margin-left: 5vw;
       margin-right: 5vw;
+      
+  }
+  .createProfileButtonDiv {
+    display: flex;
+  justify-content: center;
+  align-items: center;
   }
   .createProfileBox {
     width: 40vw;
@@ -140,12 +155,22 @@ body {
     font-family: Oxygen;
     font-style: normal;
     font-weight: normal;
-    font-size: 40px;
-   
+    font-size: 20px;
+   margin: auto;
     text-align: center;
     
     color: #FFFFFF;
     
+  }
+  @media only screen and (max-width: 600px) {
+   .createProfileTxt {
+       font-size: 20px;
+       margin: auto;
+   }
+   .createProfileBox {
+       height: 5vh;
+       margin-top: 10vh;
+   }
   }
 .jobDiv {
     margin-left: 5vw;
