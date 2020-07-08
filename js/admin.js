@@ -2,7 +2,7 @@ firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE)
     .then(function () {
         (function () {
             const loginHolder = document.querySelector("#login-holder");
-            loginHolder.addEventListener("submit", (e) => {
+            loginHolder.addEventListener("submit", async (e) => {
                 e.preventDefault(); //enter button
 
 
@@ -12,13 +12,15 @@ firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE)
                 var usersRef = db.collection("users");
                 var docRef = usersRef.doc(email)
 
-                docRef.get().then(function (doc) {
+                await docRef.get().then(function (doc) {
                     if (doc.exists) {
                         usr = doc.data()
                     }
                 })
-                if (usr.type == "admin") {
-                    console.log(usr)
+                console.log(usr)
+                console.log(email)
+                /*if (usr.type == "admin") {
+                    console.log
                     console.log(email)
                     // firebase login
                     auth.signInWithEmailAndPassword(email, password).then((cred) => {
@@ -29,6 +31,24 @@ firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE)
                     );
                 } else {
                     setTimeout(() => { document.querySelector("#login").style.backgroundColor = "#04B8D0" }, 1500)
+                }*/
+                switch (usr.type) {
+                    case "admin":
+                        // firebase login
+                        auth.signInWithEmailAndPassword(email, password).then((cred) => {
+                            document.querySelector("#loginpage").style.display = "none";
+                            document.querySelector("#changepage").style.display = "block";
+                        }).catch(error => document.querySelector("#login").style.backgroundColor = "red",
+                            setTimeout(() => { document.querySelector("#login").style.backgroundColor = "#04B8D0" }, 1500));
+
+                        break;
+                    case "user":
+                        document.querySelector("#login").style.backgroundColor = "red",
+                            setTimeout(() => { document.querySelector("#login").style.backgroundColor = "#04B8D0" }, 1500);
+                        break;
+                    default:
+                        document.querySelector("#login").style.backgroundColor = "red",
+                            setTimeout(() => { document.querySelector("#login").style.backgroundColor = "#04B8D0" }, 1500);
                 }
             })
         })();

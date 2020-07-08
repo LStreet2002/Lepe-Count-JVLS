@@ -49,7 +49,7 @@ signupForm.addEventListener('submit', (e) => {
     //Sign up user
 
     auth.createUserWithEmailAndPassword(email, password).then(cred => {
-        return db.collection('users').doc(email).set({
+        db.collection('users').doc(email.toLowerCase()).set({
             bio: signupForm['signup-about'].value,
             type: "user"
         })
