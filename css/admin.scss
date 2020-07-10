@@ -8,7 +8,7 @@ overflow-x: hidden;
 }
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
     background: rgba(0,0,0,0);
   }
   
@@ -299,6 +299,70 @@ grid-template-areas :
 }
 .upimg:hover {
     cursor:pointer;
+}
+.priceg {
+    display:grid;
+    grid-template-rows: 1fr 0.3fr;
+    grid-template-columns:1fr 2fr 1fr 2fr 1fr 2fr 1fr 2fr 2fr;
+    grid-template-areas:
+    " . . . time time time . . ."
+    "onehour priceone twohour pricetwo fourhour pricefour fullday pricefull update";
+    margin-top:3vw;
+    width:100vw;
+}
+.onehour {
+    grid-area:onehour;
+    width:11.25vw;
+}
+.priceone {
+    grid-area:priceone;
+    width:11.25vw;
+    border:none;
+    border-bottom:0.2vw solid #4054c9;
+    font-family: 'Oxygen', sans-serif;
+}
+.twohour {
+    grid-area:twohour;
+}
+.pricetwo {
+    grid-area:pricetwo;
+    width:10vw;
+    border:none;
+    border-bottom:0.2vw solid #4054c9;
+    font-family: 'Oxygen', sans-serif;
+}
+.fourhour {
+    grid-area:fourhour;
+    width:10vw;
+}
+.pricefour {
+    grid-area:pricefour;
+    width:10vw;
+    border:none;
+    border-bottom:0.2vw solid #4054c9;
+    font-family: 'Oxygen', sans-serif;
+}
+.fullday {
+    grid-area:fullday;
+    width:10vw;
+}
+.pricefull {
+    grid-area:pricefull;
+    border:none;
+    border-bottom:0.2vw solid #4054c9;
+    font-family: 'Oxygen', sans-serif;
+    width:10vw;
+}
+.updet {
+    grid-area:update;
+    border:none;
+    background-color:#7af05d;
+    color:white;
+    font-size:1.4vw;
+    text-align:center;
+}
+.time {
+    grid-area:time;
 }
 @media only screen and (max-width: 600px) {
     .menusub {

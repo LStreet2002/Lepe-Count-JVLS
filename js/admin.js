@@ -17,21 +17,6 @@ firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE)
                         usr = doc.data()
                     }
                 })
-                console.log(usr)
-                console.log(email)
-                /*if (usr.type == "admin") {
-                    console.log
-                    console.log(email)
-                    // firebase login
-                    auth.signInWithEmailAndPassword(email, password).then((cred) => {
-                        document.querySelector("#loginpage").style.display = "none";
-                        document.querySelector("#changepage").style.display = "block";
-                    }).catch(error => document.querySelector("#login").style.backgroundColor = "red",
-                        setTimeout(() => { document.querySelector("#login").style.backgroundColor = "#04B8D0" }, 1500)
-                    );
-                } else {
-                    setTimeout(() => { document.querySelector("#login").style.backgroundColor = "#04B8D0" }, 1500)
-                }*/
                 switch (usr.type) {
                     case "admin":
                         // firebase login
@@ -682,6 +667,88 @@ function delet(e) {
 
 var usr = ""
 
-window.addEventListener("DOMContentLoaded", async function () {
+var comission = []
 
+window.addEventListener("DOMContentLoaded", async function () {
+    await db.collection("comission")
+        .get()
+        .then(async function (querySnapshot) {
+            querySnapshot.forEach(function (doc) {
+                // doc.data() is never undefined for query doc snapshots
+                comission.push(doc.data())
+
+            })
+            for (var i = 0; i < comission.length; i++) {
+                var priceg = document.createElement("div")
+                priceg.classList.add("priceg")
+
+                var time = document.createElement("h2")
+                time.innerHTML = comission[i].season
+                time.classList.add("time")
+
+                var onehour = document.createElement("div")
+                onehour.innerText = "1 hour"
+                onehour.classList.add("onehour")
+
+                var priceone = document.createElement("input")
+                priceone.value = comission[i].onehour
+                priceone.classList.add("priceone")
+                priceone.setAttribute("name", "onehour")
+
+                var twohour = document.createElement("div")
+                twohour.innerText = "2 hours"
+                twohour.classList.add("twohour")
+
+                var pricetwo = document.createElement("input")
+                pricetwo.value = comission[i].twohour
+                pricetwo.classList.add("pricetwo")
+                pricetwo.setAttribute("name", "twohour")
+
+                var fourhour = document.createElement("div")
+                fourhour.innerText = "4 hours"
+                fourhour.classList.add("fourhour")
+
+                var pricefour = document.createElement("input")
+                pricefour.value = comission[i].fourhour
+                pricefour.classList.add("pricefour")
+                pricefour.setAttribute("name", "fourhour")
+
+                var full = document.createElement("div")
+                full.innerText = "Full day"
+                full.classList.add("fullday")
+
+                var pricefull = document.createElement("input")
+                pricefull.value = comission[i].fullday
+                pricefull.classList.add("pricefull")
+                priceone.setAttribute("name", "fullday")
+
+                var updet = document.createElement("div")
+                updet.classList.add("updet")
+                updet.innerText = "UPDATE"
+                updet.setAttribute("onclick", "priceup(this)")
+
+                priceg.appendChild(onehour)
+                priceg.appendChild(priceone)
+                priceg.appendChild(twohour)
+                priceg.appendChild(pricetwo)
+                priceg.appendChild(fourhour)
+                priceg.appendChild(pricefour)
+                priceg.appendChild(full)
+                priceg.appendChild(pricefull)
+                priceg.appendChild(updet)
+                priceg.appendChild(time)
+
+                document.querySelector("#updatecomission").appendChild(priceg)
+            }
+        })
 })
+function priceup(l) {
+    db.collection("comission").doc(l.parentNode.querySelector(".time").innerText)
+        .update({
+            onehour: l.parentNode.querySelector(".priceone").value,
+            twohour: l.parentNode.querySelector(".pricetwo").value,
+            fourhour: l.parentNode.querySelector(".pricefour").value,
+            fullday: l.parentNode.querySelector(".pricefull").value
+        })
+    console.log("it doing")
+}
